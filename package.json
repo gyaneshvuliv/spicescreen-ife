@@ -1,18 +1,18 @@
 {
-  "name": "edubox",
+  "name": "spicescreen-ife",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node edubox/server/app.js",
-    "prod": "NODE_ENV=production node edubox/server/app.js",
-    "dev": "NODE_ENV=development node edubox/server/app.js"
+    "start": "node spicescreen-ife/server/app.js",
+    "prod": "NODE_ENV=production node spicescreen-ife/server/app.js",
+    "dev": "NODE_ENV=development node spicescreen-ife/server/app.js"
   },
   "repository": {
     "type": "git"
   },
   "keywords": [
-    "edubox"
+    "spicescreen-ife"
   ],
   "author": "Kedar",
   "email": "kedar.gadre@vuiv.com",
