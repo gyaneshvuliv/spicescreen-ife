@@ -1,0 +1,554 @@
+[
+    {
+        "id": "1",
+        "category": "General Knowledge",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Where is Taj Mahal located?",
+                "answers": [
+                    {
+                        "option": "Agra",
+                        "status": true
+                    },
+                    {
+                        "option": "Delhi",
+                        "status": false
+                    },
+                    {
+                        "option": "Mumbai",
+                        "status": false
+                    },
+                    {
+                        "option": "Indore",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "question": "Who was the first Prime Minister of India?",
+                "answers": [
+                    {
+                        "option": "Manmohan Singh",
+                        "status": false
+                    },
+                    {
+                        "option": "Dr. S. Radhakrishnan",
+                        "status": false
+                    },
+                    {
+                        "option": "Jawaharlal Nehru",
+                        "status": true
+                    },
+                    {
+                        "option": "Mahatma Gandhi",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "question": "What is the capital of India?",
+                "answers": [
+                    {
+                        "option": "Delhi",
+                        "status": true
+                    },
+                    {
+                        "option": "Mumbai",
+                        "status": false
+                    },
+                    {
+                        "option": "Banglore",
+                        "status": false
+                    },
+                    {
+                        "option": "Gurugram",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "question": "Who wrote our National Anthem?",
+                "answers": [
+                    {
+                        "option": "Manmohan Singh",
+                        "status": false
+                    },
+                    {
+                        "option": "Rabindranath Tagore",
+                        "status": true
+                    },
+                    {
+                        "option": "Jawaharlal Nehru",
+                        "status": false
+                    },
+                    {
+                        "option": "Mahatma Gandhi",
+                        "status": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "category": "Maths",
+        "questions": [
+            {
+                "id": "1",
+                "question": "345 + 289 =",
+                "answers": [
+                    {
+                        "option": "524",
+                        "status": false
+                    },
+                    {
+                        "option": "624",
+                        "status": false
+                    },
+                    {
+                        "option": "634",
+                        "status": true
+                    },
+                    {
+                        "option": "534",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "question": "5 x 6 x 3 =",
+                "answers": [
+                    {
+                        "option": "18",
+                        "status": false
+                    },
+                    {
+                        "option": "15",
+                        "status": false
+                    },
+                    {
+                        "option": "30",
+                        "status": false
+                    },
+                    {
+                        "option": "90",
+                        "status": true
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "question": "Round 312.92 to the nearest whole number.",
+                "answers": [
+                    {
+                        "option": "313",
+                        "status": true
+                    },
+                    {
+                        "option": "312",
+                        "status": false
+                    },
+                    {
+                        "option": "312.12",
+                        "status": false
+                    },
+                    {
+                        "option": "300",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "question": "0 , 3 , 6 , 9 , 12 , ___ , ____ ",
+                "answers": [
+                    {
+                        "option": "14, 16",
+                        "status": false
+                    },
+                    {
+                        "option": "13, 14",
+                        "status": false
+                    },
+                    {
+                        "option": "15, 18",
+                        "status": true
+                    },
+                    {
+                        "option": "14, 15",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "question": "10 m =",
+                "answers": [
+                    {
+                        "option": "10,000 cm",
+                        "status": false
+                    },
+                    {
+                        "option": "1000 cm",
+                        "status": true
+                    },
+                    {
+                        "option": "100 cm",
+                        "status": false
+                    },
+                    {
+                        "option": "100,000 cm",
+                        "status": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "category": "Science",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Total no. Of bones in human body are",
+                "answers": [
+                    {
+                        "option": "216",
+                        "status": false
+                    },
+                    {
+                        "option": "260",
+                        "status": false
+                    },
+                    {
+                        "option": "206",
+                        "status": true
+                    },
+                    {
+                        "option": "306",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "question": "Which microorganisms we use to prepare yoghurt?",
+                "answers": [
+                    {
+                        "option": "bacteria",
+                        "status": true
+                    },
+                    {
+                        "option": "viruses",
+                        "status": false
+                    },
+                    {
+                        "option": "yeasts",
+                        "status": false
+                    },
+                    {
+                        "option": "mushrooms",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "question": "Weight of human brain is about",
+                "answers": [
+                    {
+                        "option": "0.5 Kilogram",
+                        "status": false
+                    },
+                    {
+                        "option": "1 Kilogram",
+                        "status": false
+                    },
+                    {
+                        "option": "1.5 Kilograms",
+                        "status": true
+                    },
+                    {
+                        "option": "2 Kilograms",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "question": "Liquid rock is called",
+                "answers": [
+                    {
+                        "option": "magma",
+                        "status": true
+                    },
+                    {
+                        "option": "metamorphic",
+                        "status": false
+                    },
+                    {
+                        "option": "weathering",
+                        "status": false
+                    },
+                    {
+                        "option": "crust",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "question": "Starting with the outer layer, what is the correct order of Earth layers as you move inward?",
+                "answers": [
+                    {
+                        "option": "core, mantle, crust",
+                        "status": false
+                    },
+                    {
+                        "option": "core, crust, mantle",
+                        "status": false
+                    },
+                    {
+                        "option": "mantle, crust, core",
+                        "status": false
+                    },
+                    {
+                        "option": "crust, mantle, core",
+                        "status": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "category": "Computer Science",
+        "questions": [
+            {
+                "id": "1",
+                "question": "WWW stands for ?",
+                "answers": [
+                    {
+                        "option": "World Whole Web",
+                        "status": false
+                    },
+                    {
+                        "option": "Wide World Web",
+                        "status": false
+                    },
+                    {
+                        "option": "Web World Wide",
+                        "status": false
+                    },
+                    {
+                        "option": "World Wide Web",
+                        "status": true
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "question": "Which of the following are components of Central Processing Unit (CPU) ?",
+                "answers": [
+                    {
+                        "option": "Arithmetic logic unit, Mouse",
+                        "status": false
+                    },
+                    {
+                        "option": "Arithmetic logic unit, Control unit",
+                        "status": true
+                    },
+                    {
+                        "option": "Arithmetic logic unit, Integrated Circuits",
+                        "status": false
+                    },
+                    {
+                        "option": "Control Unit, Monitor",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "question": "Where is RAM located ?",
+                "answers": [
+                    {
+                        "option": "Expansion Board",
+                        "status": false
+                    },
+                    {
+                        "option": "External Drive",
+                        "status": false
+                    },
+                    {
+                        "option": "Mother Board",
+                        "status": true
+                    },
+                    {
+                        "option": "All of above",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "question": "Full form of URL is ?",
+                "answers": [
+                    {
+                        "option": "Uniform Resource Locator",
+                        "status": true
+                    },
+                    {
+                        "option": "Uniform Resource Link",
+                        "status": false
+                    },
+                    {
+                        "option": "Uniform Registered Link",
+                        "status": false
+                    },
+                    {
+                        "option": "Unified Resource Link",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "question": "In which of the following form, data is stored in computer ?",
+                "answers": [
+                    {
+                        "option": "Decimal",
+                        "status": false
+                    },
+                    {
+                        "option": "Binary",
+                        "status": true
+                    },
+                    {
+                        "option": "HexaDecimal",
+                        "status": false
+                    },
+                    {
+                        "option": "Octal",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "6",
+                "question": "Technology used to provide internet by transmitting data over wires of telephone network is ?",
+                "answers": [
+                    {
+                        "option": "Transmitter",
+                        "status": false
+                    },
+                    {
+                        "option": "Diodes",
+                        "status": false
+                    },
+                    {
+                        "option": "HHL",
+                        "status": false
+                    },
+                    {
+                        "option": "DSL",
+                        "status": true
+                    }
+                ]
+            },
+            {
+                "id": "7",
+                "question": "Documents, Movies, Images and Photographs etc are stored at a ?",
+                "answers": [
+                    {
+                        "option": "Application Sever",
+                        "status": false
+                    },
+                    {
+                        "option": "Web Sever",
+                        "status": false
+                    },
+                    {
+                        "option": "Print Server",
+                        "status": false
+                    },
+                    {
+                        "option": "File Server",
+                        "status": true
+                    }
+                ]
+            },
+            {
+                "id": "8",
+                "question": "What is full form of ALU ?",
+                "answers": [
+                    {
+                        "option": "Arithmetic logic unit",
+                        "status": true
+                    },
+                    {
+                        "option": "Allowed logic unit",
+                        "status": false
+                    },
+                    {
+                        "option": "Ascii logic unit",
+                        "status": false
+                    },
+                    {
+                        "option": "Arithmetic least unit",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "9",
+                "question": "Who was the Founder of Bluetooth ?",
+                "answers": [
+                    {
+                        "option": "Ericson",
+                        "status": true
+                    },
+                    {
+                        "option": "Martin Cooper",
+                        "status": false
+                    },
+                    {
+                        "option": "Steve Jobs",
+                        "status": false
+                    },
+                    {
+                        "option": "Apple",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "id": "10",
+                "question": "Verification is process of ?",
+                "answers": [
+                    {
+                        "option": "Access",
+                        "status": false
+                    },
+                    {
+                        "option": "Login",
+                        "status": false
+                    },
+                    {
+                        "option": "Logout",
+                        "status": false
+                    },
+                    {
+                        "option": "Authentication",
+                        "status": true
+                    }
+                ]
+            }
+        ]
+    }
+]

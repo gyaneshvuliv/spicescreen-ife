@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: black;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #d0d4d0;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* input[type=submit]:hover {
+            background-color: #45a049;
+        } */
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            color: black;
+            padding: 20px;
+        }
+
+        #myForm:valid .button {
+            background: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>IFE Data and Details</h2>
+
+    <div class="container" ng-controller="vuscreenController">
+        <form id="myForm">
+            <label for="name"><b>User Name</b></label>
+            <input type="text" placeholder="User Name" ng-model="name" name="name" id="name" required>
+
+            <label for="mob"><b>Mobile No.</b></label>
+            <input type="text" placeholder="Mobile No." ng-model="mob" name="mob" id="mob" required>
+            <label for="base">Base Station</label>
+            <select id="base" name="base" ng-model="base_station" required>
+                <option value="">Select</option>
+                <option value="DEL">DEL</option>
+                <option value="BOM">BOM</option>
+                <option value="MAA">MAA</option>
+                <option value="BLR">BLR</option>
+                <option value="CCU">CCU</option>
+                <option value="HYD">HYD</option>
+                <option value="PNQ">PNQ</option>
+                <option value="AMD">AMD</option>
+                <option value="JAI">JAI</option>
+            </select>
+            <label for="start-date">Date</label>
+            <br>
+            <br>
+            <input type="date" id="start-date" ng-model="start_date" name="start_date" required />
+            <br>
+            <br>
+            <label for="base">From</label>
+            <select id="from" name="base" ng-model="from_station" required>
+                <option value="">Select</option>
+                <option value="JAI">JAI</option>
+                <option value="MAA">MAA</option>
+                <option value="BOM">BOM</option>
+                <option value="BLR">BLR</option>
+                <option value="IXE">IXE</option>
+                <option value="VGA">VGA</option>
+                <option value="PTA">PTA</option>
+                <option value="IXG">IXG</option>
+                <option value="DEL">DEL</option>
+                <option value="CCU">CCU</option>
+                <option value="HYD">HYD</option>
+                <option value="PNQ">PNQ</option>
+                <option value="AMD">AMD</option>
+                <option value="CJB">CJB</option>
+                <option value="GAU">GAU</option>
+                <option value="IXM">IXM</option>
+                <option value="TRV">TRV</option>
+                <option value="BOM">BOM</option>
+                <option value="COK">COK</option>
+                <option value="GWL">GWL</option>
+                <option value="GOI">GOI</option>
+                <option value="IXB">IXB</option>
+                <option value="PAT">PAT</option>
+            </select>
+            <label for="base">To</label>
+            <select id="to" name="base" ng-model="to_station" required>
+                <option value="">Select</option>
+                <option value="VNS">VNS</option>
+                <option value="DEL">DEL</option>
+                <option value="GAU">GAU</option>
+                <option value="PNQ">PNQ</option>
+                <option value="DMM">DMM</option>
+                <option value="BLR">BLR</option>
+                <option value="VGA">VGA</option>
+                <option value="IXG">IXG</option>
+                <option value="MAA">MAA</option>
+                <option value="IXE">IXE</option>
+                <option value="CCU">CCU</option>
+                <option value="PAT">PAT</option>
+                <option value="IXM">IXM</option>
+                <option value="HYD">HYD</option>
+                <option value="DXB">DXB</option>
+                <option value="RAJ">RAJ</option>
+                <option value="ATQ">ATQ</option>
+                <option value="BOM">BOM</option>
+                <option value="IXJ">IXJ</option>
+                <option value="IXL">IXL</option>
+                <option value="SXR">SXR</option>
+                <option value="CJB">CJB</option>
+                <option value="COK">COK</option>
+                <option value="TRV">TRV</option>
+                <option value="JAI">JAI</option>
+                <option value="IXB">IXB</option>
+                <option value="IKL">IKL</option>
+                <option value="DHM">DHM</option>
+                <option value="STV">STV</option>
+                <option value="GWL">GWL</option>
+                <option value="KQH">KQH</option>
+                <option value="DE">DE</option>
+                <option value="JRG">JRG</option>
+                <option value="JLR">JLR</option>
+                <option value="IXD">IXD</option>
+                <option value="GUA">GUA</option>
+                <option value="TIR">TIR</option>
+                <option value="DED">DED</option>
+                <option value="GOP">GOP</option>
+                <option value="DNQ">DNQ</option>
+                <option value="RUH">RUH</option>
+                <option value="JED">JED</option>
+                <option value="GAO">GAO</option>
+                <option value="KNU">KNU</option>
+                <option value="GOI">GOI</option>
+                <option value="AMD">AMD</option>
+                <option value="JDH">JDH</option>
+                <option value="IXR">IXR</option>
+                <option value="IXY">IXY</option>
+                <option value="RDP">RDP</option>
+            </select>
+            <label for="fno">Flight Number</label><br>
+            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
+            <label for="fno">Host 1</label><br>
+            <placeholder="Host 1">
+                <select id="host1" ng-model="host1" required>
+                </select>
+                <script>
+                    var host1 = 1;
+                    var till = 300;
+                    var options = "<option value=''>Select</option>";
+                    for (var h1 = host1; h1 <= till; h1++) {
+                        options += "<option>" + h1 + "</option>";
+                    }
+                    document.getElementById("host1").innerHTML = options;
+                </script>
+
+                <label for="fno">Host 2</label><br>
+                <placeholder="Host 2">
+                    <br>
+                    <select id="host2" ng-model="host2" required>
+
+                    </select>
+                    <script>
+                        var host2 = 1;
+                        var till = 300;
+                        var options = "<option value=''>Select</option>";
+                        for (var h2 = host2; h2 <= till; h2++) {
+                            options += "<option>" + h2 + "</option>";
+                        }
+                        document.getElementById("host2").innerHTML = options;
+                    </script>
+                    <label for="Remo">Remote</label><br>
+                    <placeholder="Remote1">
+                        <br>
+                        <select id="rem1" ng-model="rem" required>
+                        </select>
+                        <script>
+                            var rem1 = 1;
+                            var till = 100;
+                            var options = "<option value=''>Select</option>";
+                            for (var r1 = rem1; r1 <= till; r1++) {
+                                options += "<option>" + r1 + "</option>";
+                            }
+                            document.getElementById("rem1").innerHTML = options;
+                        </script>
+                        <input class="button" type="submit" ng-click="save()" value="Submit">
+                        <script>
+                            $(document).ready(function () {
+                                validate();
+                                $('#name,#mob,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1').change(validate);
+                            });
+
+                            function validate() {
+                                if ($('#name').val() != "" &&
+                                    $('#mob').val() != "" &&
+                                    $('#base').val() != "" &&
+                                    $('#start-date').val() != "" &&
+                                    $('#from').val() != "" &&
+                                    $('#to').val() != "" &&
+                                    $('#fno').val() != "" &&
+                                    $('#host1').val() != "" &&
+                                    $('#host2').val() != "" &&
+                                    $('#rem1').val() != "") {
+                                    $("input[type=submit]").prop("disabled", false);
+                                }
+                                else {
+                                    $("input[type=submit]").prop("disabled", true);
+                                }
+                            }
+                        </script>
+        </form>
+    </div>
+
+</body>
+
+</html>

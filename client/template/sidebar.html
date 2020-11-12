@@ -1,0 +1,64 @@
+<!-- begin #sidebar -->
+<div id="sidebar" class="sidebar" ng-controller="sidebarController" ng-class="{ 'sidebar-transparent': setting.layout.pageSidebarTransparent }">
+    <!-- begin sidebar scrollbar -->
+    <div data-scrollbar="true" data-height="100%" >
+        <!-- begin sidebar user -->
+        <ul class="nav">
+            <li class="nav-profile">
+                <div class="image">
+                    <a href="javascript:;"><img src="{{user.logo}}" alt="" /></a>
+                </div>
+                <div class="info">
+                    {{user.name}}
+                    <small>{{user.companyName}}</small>
+                </div>
+            </li>
+        </ul>
+        <!-- end sidebar user -->
+        <!-- begin sidebar nav -->
+        <ul class="nav">
+            <li class="nav-header">Navigation </li>
+            <li class="has-sub" ng-class="{active:$state.includes('app.dashboard')}">
+                <a ui-sref="app.dashboard"><i class="fa fa-laptop"></i>Dashboard</a>
+            </li>
+            <!-- <li class="has-sub" ng-class="{active:$state.includes('app.dashboard')}">
+                <a href="javascript:;">
+                    <b class="badge pull-right"></b>
+                    <i class="fa fa-laptop"></i>
+                    <span>Dashboard </span>
+                </a>
+                <ul class="sub-menu">
+                    <li ui-sref-active="active"><a ui-sref="app.dashboard">Overview</a></li>
+                </ul>
+            </li> -->
+            <li ui-sref-active="active"><a ui-sref="app.document"><i class="fa fa-file-word-o"></i> <span>Document</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app.screenflow"><i class="fa fa-picture-o"></i> <span>Screenflow</span></a></li>
+            <!-- <li ui-sref-active="active"><a ui-sref="app.videos"><i class="fa fa-file-movie-o"></i> <span>Video</span></a></li> -->
+            <li ui-sref-active="active"><a ui-sref="app.apk"><i class="fa fa-android"></i> <span>Get APK</span></a></li>
+            <li class="has-sub" ng-class="{active:$state.includes('app.reports')}">
+                <a href="javascript:;">
+                    <b class="badge pull-right"></b>
+                    <i class="fa fa-file"></i>
+                    <span>Reports </span>
+                </a>
+                <ul class="sub-menu">
+                    <li ui-sref-active="active"><a ui-sref="app.reports.registration">Registration Logs</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.events">Events Logs</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.tracker">Play Logs</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.memorytracker">Memory Tracker</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.serversession">Server Sessions</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.topcontent">Top Content</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.topcategory">Top Categories</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.reports.leaderboard">Leaderboard</a></li>
+                </ul>
+            </li>            
+            <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+            <!-- end sidebar minify button -->
+        </ul>
+        <!-- end sidebar nav -->
+    </div>
+    <!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg"></div>
+<!-- end #sidebar -->
+

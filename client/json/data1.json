@@ -1,0 +1,104 @@
+{
+    "data": [
+        {
+            "folder": "Maths",
+            "uploaded_by": "1111111111",
+            "videos": [
+                {
+                    "class_name": "11th",
+                    "id": "aW50ZWdyYXRpb24gYnkgcGFydGlhbCBmcmFjdGlvbg==",
+                    "name": "Ratio and Proportion - CBSE NCERT Maths lesson Class VI  VII",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/RatioandProportionCBSENCERTMathslessonClassVIVII.mp4",
+                    "duration": "1670",
+                    "type": "video"
+                }
+            ]
+        },
+        {
+            "folder": "Physics",
+            "uploaded_by": "1111111111",
+            "videos": [
+                {
+                    "class_name": "11th",
+                    "id": "Z3Jhdml0eQ==",
+                    "name": "Units and Measurements  Part 2  CBSE Class 11 Physics  Chapter 2  Explaination  In Hindi",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/UnitsandMeasurementsPart2CBSEClass11PhysicsChapter2ExplainationInHindi.mp4",
+                    "duration": "858",
+                    "type": "video"
+                }
+            ]
+        },
+        {
+            "folder": "Chemistry",
+            "uploaded_by": "1111111111",
+            "videos": [
+                {
+                    "class_name": "11th",
+                    "id": "U2V0dGluZy11cC1hbmQtUGVyZm9ybWluZy1hLVRpdHJhdGlvbg==",
+                    "name": "Setting-up-and-Performing-a-Titration",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/Setting-up-and-Performing-a-Titration.mp4",
+                    "duration": "351",
+                    "type": "video"
+                },
+                {
+                    "class_name": "11th",
+                    "id": "U2V0dGluZy11cC1hbmQtUGVyZm9ybWluZy1hLVRpdHJhdGl11vbg==",
+                    "name": "Class 11 Chemistry chapter 2  structure of atom  chemistry ch 2 class 11  Blue sky",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/Class11Chemistrychapter2structureofatomchemistrych2class11Bluesky.mp4",
+                    "duration": "351",
+                    "type": "video"
+                }
+            ]
+        },
+        {
+            "folder": "Computer",
+            "uploaded_by": "1111111111",
+            "videos": [
+                {
+                    "class_name": "11th",
+                    "id": "aW50ZWdyYXRpb24gYnkgcGFydGlhbCB22mcmFjdGlvbg==",
+                    "name": "Computer Overview",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/ComputerOverview.mp4",
+                    "duration": "1670",
+                    "type": "video"
+                }
+            ]
+        },
+        {
+            "folder": "Science",
+            "uploaded_by": "1111111111",
+            "videos": [
+                {
+                    "class_name": "11th",
+                    "id": "aW50ZWdyYXRpb211YnkgcGFydGlhbCB22mcmFjdGlvbg==",
+                    "name": "Introduction to Earth Science",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/IntroductiontoEarthScience.mp4",
+                    "duration": "1670",
+                    "type": "video"
+                },
+                {
+                    "class_name": "11th",
+                    "id": "aW50ZWdyYXRpb211YnkgcGFydGlhbCB22m2hehs==",
+                    "name": "The Living World  Class 11 12 Biology Video Lectures in English",
+                    "description": "",
+                    "thumbnail": "http://10.42.0.1:9632/images/video.png",
+                    "url": "http://10.42.0.1:9632/videos/TheLivingWorldClass1112BiologyVideoLecturesinEnglish.mp4",
+                    "duration": "1670",
+                    "type": "video"
+                }
+            ]
+        }
+    ]
+}
