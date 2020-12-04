@@ -3,11 +3,15 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: black;
             color: white;
+            margin-top: -21px;
         }
 
         * {
@@ -28,7 +32,7 @@
         }
 
         input[type=submit] {
-            background-color: #d0d4d0;
+            background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -36,9 +40,9 @@
             cursor: pointer;
         }
 
-        /* input[type=submit]:hover {
+        input[type=submit]:hover {
             background-color: #45a049;
-        } */
+        }
 
         .container {
             border-radius: 5px;
@@ -47,23 +51,120 @@
             padding: 20px;
         }
 
-        #myForm:valid .button {
-            background: #4CAF50;
+        .hidden {
+            display: none;
+        }
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        #title {
+            margin-left: 24px;
+            padding-top: 21px;
         }
     </style>
 </head>
 
 <body>
 
-    <h2>IFE Data and Details</h2>
+    <h2 id="title">IFE Data and Details</h2>
 
     <div class="container" ng-controller="vuscreenController">
         <form id="myForm">
-            <label for="name"><b>User Name</b></label>
-            <input type="text" placeholder="User Name" ng-model="name" name="name" id="name" required>
-
-            <label for="mob"><b>Mobile No.</b></label>
-            <input type="text" placeholder="Mobile No." ng-model="mob" name="mob" id="mob" required>
+            <label>Flight Type</label>
+            <select id="f_type" name="f_type" ng-model="f_type" required>
+                <option value="">Select</option>
+                <option value="Domestic">Domestic</option>
+                <option value="International">International</option>
+            </select>
+            <label for="fno">Flight Number</label><br>
+            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
+            <label for="start-date">Date</label>
+            <br>
+            <br>
+            <input type="date" id="start-date" ng-model="start_date" name="start_date" required />
+            <br>
+            <br>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
                 <option value="">Select</option>
@@ -77,12 +178,6 @@
                 <option value="AMD">AMD</option>
                 <option value="JAI">JAI</option>
             </select>
-            <label for="start-date">Date</label>
-            <br>
-            <br>
-            <input type="date" id="start-date" ng-model="start_date" name="start_date" required />
-            <br>
-            <br>
             <label for="base">From</label>
             <select id="from" name="base" ng-model="from_station" required>
                 <option value="">Select</option>
@@ -164,8 +259,7 @@
                 <option value="IXY">IXY</option>
                 <option value="RDP">RDP</option>
             </select>
-            <label for="fno">Flight Number</label><br>
-            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
+
             <label for="fno">Host 1</label><br>
             <placeholder="Host 1">
                 <select id="host1" ng-model="host1" required>

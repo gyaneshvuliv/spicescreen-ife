@@ -6,13 +6,13 @@ var moment = require('moment');
 var request = require('request');
 
 exports.IFE_upload = function (req, res) {
-  const { name, mob, start_date, base_station, from, to, fno, host1, host2, rem} = req.body
+  const { f_type, start_date, base_station, from, to, fno, host1, host2, rem} = req.body
   let query = "Insert INTO"
     + " vuscreen_ife_data "
-    + " (name, mobile_no, date, base_station, source, destination, f_no, host1, host2, remote)"
-    + " VALUES ('" + name + "','" + mob + "','" + moment(start_date).format("YYYY-MM-DD") + "','" + base_station
+    + " (f_type, date, base_station, source, destination, f_no, host1, host2, remote)"
+    + " VALUES ('" + f_type + "','" + moment(start_date).format("YYYY-MM-DD") + "','" + base_station
     + "','" + from + "','" + to + "','" + fno + "'," + host1 + "," + host2 + "," + rem + ")";
-  db.get().query(query, function (err, doc) {
+    db.get().query(query, function (err, doc) {
     if (err) { return handleError(res, err); }
     else {
       return res.status(200).json(doc);
