@@ -2,9 +2,16 @@
 
 
 angular.module('VuscreenApp')
-    .controller('vuscreenController', function ($scope, $http) {
+    .controller('vuscreenController', function ($scope, $http,$location) {
+        console.log($location.search())
+        $scope.name = $location.search().name
+        $scope.mobile_no = $location.search().mobile_no
+        console.log($scope.mobile_no)
+        console.log($scope.name)
         $scope.save = function () {
             var parameter = {
+                name: $scope.name,
+                mobile_no:$scope.mobile_no,
                 f_type: $scope.f_type,
                 base_station: $scope.base_station,
                 start_date: $scope.start_date,
