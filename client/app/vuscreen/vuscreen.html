@@ -162,8 +162,25 @@
             <label for="start-date">Date</label>
             <br>
             <br>
-            <input type="date" id="start-date" ng-model="start_date" name="start_date" required />
+            <input type="date" id="start-date" onchange="validateDate(this)" ng-model="start_date" name="start_date" required />
             <br>
+            <script>
+                var dateControler = {
+                    currentDate: null
+                }
+
+                function validateDate(id) {
+                    var now = new Date();
+                    var selectedDate = new Date($(id).val());
+
+                    console.log(selectedDate)
+                    if (selectedDate > now) {
+                        $(id).val(dateControler.currentDate)
+                    } else {
+                        dateControler.currentDate = $(id).val();
+                    }
+                }
+            </script>
             <br>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
@@ -181,83 +198,150 @@
             <label for="base">From</label>
             <select id="from" name="base" ng-model="from_station" required>
                 <option value="">Select</option>
-                <option value="JAI">JAI</option>
-                <option value="MAA">MAA</option>
-                <option value="BOM">BOM</option>
-                <option value="BLR">BLR</option>
-                <option value="IXE">IXE</option>
-                <option value="VGA">VGA</option>
-                <option value="PTA">PTA</option>
-                <option value="IXG">IXG</option>
-                <option value="DEL">DEL</option>
-                <option value="CCU">CCU</option>
-                <option value="HYD">HYD</option>
-                <option value="PNQ">PNQ</option>
+                <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
-                <option value="CJB">CJB</option>
-                <option value="GAU">GAU</option>
-                <option value="IXM">IXM</option>
-                <option value="TRV">TRV</option>
+                <option value="ATQ">ATQ</option>
+                <option value="BHO">BHO</option>
+                <option value="BKK">BKK</option>
+                <option value="BLR">BLR</option>
                 <option value="BOM">BOM</option>
+                <option value="CCJ">CCJ</option>
+                <option value="CCU">CCU</option>
+                <option value="CJB">CJB</option>
+                <option value="CMB">CMB</option>
                 <option value="COK">COK</option>
-                <option value="GWL">GWL</option>
+                <option value="DAC">DAC</option>
+                <option value="DBR">DBR</option>
+                <option value="DED">DED</option>
+                <option value="DEL">DEL</option>
+                <option value="DHM">DHM</option>
+                <option value="DIB">DIB</option>
+                <option value="DMM">DMM</option>
+                <option value="DXB">DXB</option>
+                <option value="GAU">GAU</option>
                 <option value="GOI">GOI</option>
+                <option value="GOP">GOP</option>
+                <option value="GWL">GWL</option>
+                <option value="HKG">HKG</option>
+                <option value="HYD">HYD</option>
+                <option value="ISK">ISK</option>
                 <option value="IXB">IXB</option>
+                <option value="IXE">IXE</option>
+                <option value="IXG">IXG</option>
+                <option value="IXJ">IXJ</option>
+                <option value="IXL">IXL</option>
+                <option value="IXM">IXM</option>
+                <option value="IXS">IXS</option>
+                <option value="IXU">IXU</option>
+                <option value="IXY">IXY</option>
+                <option value="IXZ">IXZ</option>
+                <option value="JAI">JAI</option>
+                <option value="JDH">JDH</option>
+                <option value="JED">JED</option>
+                <option value="JLR">JLR</option>
+                <option value="JRG">JRG</option>
+                <option value="JSA">JSA</option>
+                <option value="KBL">KBL</option>
+                <option value="KNU">KNU</option>
+                <option value="KQH">KQH</option>
+                <option value="KUT">KUT</option>
+                <option value="MAA">MAA</option>
+                <option value="MCT">MCT</option>
                 <option value="PAT">PAT</option>
+                <option value="PBD">PBD</option>
+                <option value="PNQ">PNQ</option>
+                <option value="PNY">PNY</option>
+                <option value="RAJ">RAJ</option>
+                <option value="RDP">RDP</option>
+                <option value="RKT">RKT</option>
+                <option value="RUH">RUH</option>
+                <option value="SAG">SAG</option>
+                <option value="STV">STV</option>
+                <option value="SXR">SXR</option>
+                <option value="SYD">SYD</option>
+                <option value="TBS">TBS</option>
+                <option value="TCR">TCR</option>
+                <option value="TIR">TIR</option>
+                <option value="TRV">TRV</option>
+                <option value="UDR">UDR</option>
+                <option value="VGA">VGA</option>
+                <option value="VJA">VJA</option>
+                <option value="VNS">VNS</option>
+                <option value="VTZ">VTZ</option>
             </select>
             <label for="base">To</label>
             <select id="to" name="base" ng-model="to_station" required>
                 <option value="">Select</option>
-                <option value="VNS">VNS</option>
-                <option value="DEL">DEL</option>
-                <option value="GAU">GAU</option>
-                <option value="PNQ">PNQ</option>
-                <option value="DMM">DMM</option>
-                <option value="BLR">BLR</option>
-                <option value="VGA">VGA</option>
-                <option value="IXG">IXG</option>
-                <option value="MAA">MAA</option>
-                <option value="IXE">IXE</option>
-                <option value="CCU">CCU</option>
-                <option value="PAT">PAT</option>
-                <option value="IXM">IXM</option>
-                <option value="HYD">HYD</option>
-                <option value="DXB">DXB</option>
-                <option value="RAJ">RAJ</option>
+                <option value="AIP">AIP</option>
+                <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
+                <option value="BHO">BHO</option>
+                <option value="BKK">BKK</option>
+                <option value="BLR">BLR</option>
                 <option value="BOM">BOM</option>
+                <option value="CCJ">CCJ</option>
+                <option value="CCU">CCU</option>
+                <option value="CJB">CJB</option>
+                <option value="CMB">CMB</option>
+                <option value="COK">COK</option>
+                <option value="DAC">DAC</option>
+                <option value="DBR">DBR</option>
+                <option value="DED">DED</option>
+                <option value="DEL">DEL</option>
+                <option value="DHM">DHM</option>
+                <option value="DIB">DIB</option>
+                <option value="DMM">DMM</option>
+                <option value="DXB">DXB</option>
+                <option value="GAU">GAU</option>
+                <option value="GOI">GOI</option>
+                <option value="GOP">GOP</option>
+                <option value="GWL">GWL</option>
+                <option value="HKG">HKG</option>
+                <option value="HYD">HYD</option>
+                <option value="ISK">ISK</option>
+                <option value="IXB">IXB</option>
+                <option value="IXE">IXE</option>
+                <option value="IXG">IXG</option>
                 <option value="IXJ">IXJ</option>
                 <option value="IXL">IXL</option>
-                <option value="SXR">SXR</option>
-                <option value="CJB">CJB</option>
-                <option value="COK">COK</option>
-                <option value="TRV">TRV</option>
-                <option value="JAI">JAI</option>
-                <option value="IXB">IXB</option>
-                <option value="IKL">IKL</option>
-                <option value="DHM">DHM</option>
-                <option value="STV">STV</option>
-                <option value="GWL">GWL</option>
-                <option value="KQH">KQH</option>
-                <option value="DE">DE</option>
-                <option value="JRG">JRG</option>
-                <option value="JLR">JLR</option>
-                <option value="IXD">IXD</option>
-                <option value="GUA">GUA</option>
-                <option value="TIR">TIR</option>
-                <option value="DED">DED</option>
-                <option value="GOP">GOP</option>
-                <option value="DNQ">DNQ</option>
-                <option value="RUH">RUH</option>
-                <option value="JED">JED</option>
-                <option value="GAO">GAO</option>
-                <option value="KNU">KNU</option>
-                <option value="GOI">GOI</option>
-                <option value="AMD">AMD</option>
-                <option value="JDH">JDH</option>
-                <option value="IXR">IXR</option>
+                <option value="IXM">IXM</option>
+                <option value="IXS">IXS</option>
+                <option value="IXU">IXU</option>
                 <option value="IXY">IXY</option>
+                <option value="IXZ">IXZ</option>
+                <option value="JAI">JAI</option>
+                <option value="JDH">JDH</option>
+                <option value="JED">JED</option>
+                <option value="JLR">JLR</option>
+                <option value="JRG">JRG</option>
+                <option value="JSA">JSA</option>
+                <option value="KBL">KBL</option>
+                <option value="KNU">KNU</option>
+                <option value="KQH">KQH</option>
+                <option value="KUT">KUT</option>
+                <option value="MAA">MAA</option>
+                <option value="MCT">MCT</option>
+                <option value="PAT">PAT</option>
+                <option value="PBD">PBD</option>
+                <option value="PNQ">PNQ</option>
+                <option value="PNY">PNY</option>
+                <option value="RAJ">RAJ</option>
                 <option value="RDP">RDP</option>
+                <option value="RKT">RKT</option>
+                <option value="RUH">RUH</option>
+                <option value="SAG">SAG</option>
+                <option value="STV">STV</option>
+                <option value="SXR">SXR</option>
+                <option value="SYD">SYD</option>
+                <option value="TBS">TBS</option>
+                <option value="TCR">TCR</option>
+                <option value="TIR">TIR</option>
+                <option value="TRV">TRV</option>
+                <option value="UDR">UDR</option>
+                <option value="VGA">VGA</option>
+                <option value="VJA">VJA</option>
+                <option value="VNS">VNS</option>
+                <option value="VTZ">VTZ</option>
             </select>
 
             <label for="fno">Host 1</label><br>
@@ -296,7 +380,7 @@
                         </select>
                         <script>
                             var rem1 = 1;
-                            var till = 100;
+                            var till = 150;
                             var options = "<option value=''>Select</option>";
                             for (var r1 = rem1; r1 <= till; r1++) {
                                 options += "<option>" + r1 + "</option>";
