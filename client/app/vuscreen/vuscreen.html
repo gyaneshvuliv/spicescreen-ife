@@ -123,15 +123,16 @@
         }
 
         .modal-header {
-            padding: 2px 16px;
+            padding: 0px 41px;
             background-color: #5cb85c;
             color: white;
         }
-
+        
         .modal-body {
-            padding: 2px 16px;
+            padding: 0px 37px;
+            color: black;
         }
-
+        
         .modal-footer {
             padding: 2px 16px;
             background-color: #5cb85c;
@@ -142,11 +143,33 @@
             margin-left: 24px;
             padding-top: 21px;
         }
+
+        .button_grey {
+            background-color: grey !important;
+        }
+
+        .button_green {
+            background-color: green !important;
+        }
     </style>
 </head>
 
 <body>
-
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="m2"></h2>
+            </div>
+            <br>
+            <div class="modal-body">
+                <p id="m1"></p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
     <h2 id="title">IFE Data and Details</h2>
 
     <div class="container" ng-controller="vuscreenController">
@@ -162,7 +185,8 @@
             <label for="start-date">Date</label>
             <br>
             <br>
-            <input type="date" id="start-date" onchange="validateDate(this)" ng-model="start_date" name="start_date" required />
+            <input type="date" id="start-date" onchange="validateDate(this)" ng-model="start_date" name="start_date"
+                required />
             <br>
             <script>
                 var dateControler = {
@@ -389,16 +413,15 @@
                             }
                             document.getElementById("rem1").innerHTML = options;
                         </script>
-                        <input class="button" type="submit" ng-click="save()" value="Submit">
+                        <input class="button_grey" id="register" type="submit" ng-click="save()" value="Submit">
                         <script>
                             $(document).ready(function () {
                                 validate();
-                                $('#name,#mob,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1').change(validate);
+                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1').change(validate);
                             });
 
                             function validate() {
-                                if ($('#name').val() != "" &&
-                                    $('#mob').val() != "" &&
+                                if ($('#f_type').val() != "" &&
                                     $('#base').val() != "" &&
                                     $('#start-date').val() != "" &&
                                     $('#from').val() != "" &&
@@ -407,10 +430,14 @@
                                     $('#host1').val() != "" &&
                                     $('#host2').val() != "" &&
                                     $('#rem1').val() != "") {
-                                    $("input[type=submit]").prop("disabled", false);
+                                    $('#register').removeClass('button_grey');
+                                    $('#register').addClass('button_green');
+                                    $('#register').removeAttr('disabled');
                                 }
                                 else {
                                     $("input[type=submit]").prop("disabled", true);
+                                    $('#register').removeClass('button_green');
+                                    $('#register').addClass('button_grey');
                                 }
                             }
                         </script>

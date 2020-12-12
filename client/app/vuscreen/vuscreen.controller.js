@@ -5,14 +5,29 @@ angular.module('VuscreenApp')
     .controller('vuscreenController', function ($scope, $http, $location) {
         $scope.name = $location.search().name
         $scope.mobile_no = $location.search().mobile_no
-        console.log($scope.mobile_no)
-        console.log($scope.name)
         $scope.save = function () {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
             if ($scope.from_station === $scope.to_station) {
-                alert("From and To cannot be Same");
-
+                document.getElementById("myModal").style.display = "block";
+                document.getElementById("m1").innerHTML = "<b>From</b> and <b>To</b> cannot be Same";
+                document.getElementById("m2").innerHTML = "Invalide Data";
+                setTimeout(function () {
+                    document.getElementById("myModal").style.display = "none";
+                }, 3000);
             } else if ($scope.host1 === $scope.host2) {
-                alert("Host1 and Host2 cannot be same");
+                document.getElementById("myModal").style.display = "block";
+                document.getElementById("m1").innerHTML = "<b>Host1</b> and <b>Host2</b> cannot be same";
+                document.getElementById("m2").innerHTML = "Invalide Data";
+                setTimeout(function () {
+                    document.getElementById("myModal").style.display = "none";
+                }, 3000);
             } else {
                 var parameter = {
                     name: $scope.name,
@@ -30,8 +45,14 @@ angular.module('VuscreenApp')
                 $http.post('/api/vuscreen/upload', parameter).then(function (success) {
                     $scope.data = success;
                     if ($scope.data.status == 200) {
-                        alert("Successfully Uploaded.")
-                        window.location.reload()
+                        document.getElementById("m1").innerHTML = "";
+                        document.getElementById("m2").innerHTML = "Form Submitted Successfully.";
+                        document.getElementById("myModal").style.display = "block";
+                        setTimeout(function () {
+                            document.getElementById("myModal").style.display = "none";
+                            window.location.reload()
+                        }, 2000);
+                        
                     } else {
                         alert("Somthing went wrong, try again later.")
                     }
