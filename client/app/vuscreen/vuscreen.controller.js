@@ -33,6 +33,7 @@ angular.module('VuscreenApp')
                     name: $scope.name,
                     mobile_no: $scope.mobile_no,
                     f_type: $scope.f_type,
+                    airCrafType: $scope.airCrafType,
                     base_station: $scope.base_station,
                     start_date: $scope.start_date,
                     from: $scope.from_station,

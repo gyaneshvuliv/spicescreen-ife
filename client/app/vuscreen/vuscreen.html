@@ -182,6 +182,13 @@
             </select>
             <label for="fno">Flight Number</label><br>
             <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
+            <label>AirCraft Type</label>
+			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
+				<option value="Select">Select</option>
+				<option value="">Q400</option>
+				<option value="">Boeing</option>
+				<option value="">AirBus</option>
+			</select>
             <label for="start-date">Date</label>
             <br>
             <br>
@@ -417,7 +424,7 @@
                         <script>
                             $(document).ready(function () {
                                 validate();
-                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1').change(validate);
+                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
                             });
 
                             function validate() {
@@ -427,6 +434,7 @@
                                     $('#from').val() != "" &&
                                     $('#to').val() != "" &&
                                     $('#fno').val() != "" &&
+                                    $('#airCrafType').val() != "" &&
                                     $('#host1').val() != "" &&
                                     $('#host2').val() != "" &&
                                     $('#rem1').val() != "") {
