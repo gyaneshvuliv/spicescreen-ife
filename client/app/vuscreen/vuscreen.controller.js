@@ -14,9 +14,6 @@ angular.module('VuscreenApp')
                     modal.style.display = "none";
                 }
             }
-            console.log($scope.from_station);
-            console.log($scope.hostife1);
-            console.log($scope.hostife2);
             if ($scope.from_station === $scope.to_station) {
                 document.getElementById("myModal").style.display = "block";
                 document.getElementById("m1").innerHTML = "<b>From</b> and <b>To</b> cannot be Same";
@@ -24,7 +21,7 @@ angular.module('VuscreenApp')
                 setTimeout(function () {
                     document.getElementById("myModal").style.display = "none";
                 }, 3000);
-            } else if ($scope.hostife1 === $scope.hostife2) {
+            } else if ($scope.host1 === $scope.host2) {
                 document.getElementById("myModal").style.display = "block";
                 document.getElementById("m1").innerHTML = "<b>Host1</b> and <b>Host2</b> cannot be same";
                 document.getElementById("m2").innerHTML = "Invalide Data";
@@ -42,8 +39,8 @@ angular.module('VuscreenApp')
                     from: $scope.from_station,
                     to: $scope.to_station,
                     fno: $scope.fno,
-                    host1: $scope.hostife1,
-                    host2: $scope.hostife2,
+                    host1: $scope.host1,
+                    host2: $scope.host2,
                     rem: $scope.rem
                 }
                 $http.post('/api/vuscreen/upload', parameter).then(function (success) {

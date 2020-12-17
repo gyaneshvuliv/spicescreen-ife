@@ -184,10 +184,10 @@
             <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
             <label>AirCraft Type</label>
 			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
-				<option>Select</option>
-				<option value="Q400">Q400</option>
-				<option value="Boeing">Boeing</option>
-				<option value="AirBus">AirBus</option>
+				<option value="Select">Select</option>
+				<option value="">Q400</option>
+				<option value="">Boeing</option>
+				<option value="">AirBus</option>
 			</select>
             <label for="start-date">Date</label>
             <br>
@@ -215,7 +215,7 @@
             <br>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
-                <option value="" selected hidden>Select</option>
+                <option value="">Select</option>
                 <option value="COK">COK</option>
                 <option value="CCJ">CCJ</option>
                 <option value="DEL">DEL</option>
@@ -230,7 +230,7 @@
             </select>
             <label for="base">From</label>
             <select id="from" name="base" ng-model="from_station" required>
-                <option value="" selected hidden>Select</option>
+                <option value="">Select</option>
                 <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
@@ -304,7 +304,7 @@
             </select>
             <label for="base">To</label>
             <select id="to" name="base" ng-model="to_station" required>
-                <option value="" selected hidden>Select</option>
+                <option value="">Select</option>
                 <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
@@ -377,16 +377,35 @@
                 <option value="VTZ">VTZ</option>
             </select>
 
-            <label for="fno">Host IFE 1</label><br>
+            <label for="fno">Host 1</label><br>
             <placeholder="Host 1">
-                <select id="hostife1" name="hostife1" ng-model="hostife1" required>
+                <select id="host1" ng-model="host1" required>
                 </select>
-                <label for="fno">Host IFE 2</label><br>
+                <script>
+                    var host1 = 1;
+                    var till = 300;
+                    var options = "<option value=''>Select</option>";
+                    for (var h1 = host1; h1 <= till; h1++) {
+                        options += "<option>" + h1 + "</option>";
+                    }
+                    document.getElementById("host1").innerHTML = options;
+                </script>
+
+                <label for="fno">Host 2</label><br>
                 <placeholder="Host 2">
                     <br>
-                    <select id="hostife2" name="hostife2" ng-model="hostife2" required>
+                    <select id="host2" ng-model="host2" required>
 
                     </select>
+                    <script>
+                        var host2 = 1;
+                        var till = 300;
+                        var options = "<option value=''>Select</option>";
+                        for (var h2 = host2; h2 <= till; h2++) {
+                            options += "<option>" + h2 + "</option>";
+                        }
+                        document.getElementById("host2").innerHTML = options;
+                    </script>
                     <label for="Remo">Remote</label><br>
                     <placeholder="Remote1">
                         <br>
@@ -395,7 +414,7 @@
                         <script>
                             var rem1 = 1;
                             var till = 150;
-                            var options = '<option value="" selected hidden>Select</option>';
+                            var options = "<option value=''>Select</option>";
                             for (var r1 = rem1; r1 <= till; r1++) {
                                 options += "<option>" + r1 + "</option>";
                             }
@@ -405,85 +424,9 @@
                         <script>
                             $(document).ready(function () {
                                 validate();
-                                $('#f_type,#base,#start-date,#from,#to,#fno,#hostife1,#hostife2,#rem1,#airCrafType').change(validate);
-                                $("#airCrafType").change(function() {
-                                    console.log("AirCrafType: " + $(this).val() );
-                                    if ($(this).val() == "Q400") {
-                                        var host1 = 101;
-                                        var till = 200;
-                                        var sb1 = document.getElementById('hostife1');
-                                        for (var h1 = host1; h1 <= till; h1++) {
-                                            var opt = document.createElement('option');
-                                            opt.value = h1;
-                                            opt.text = h1;
-                                            sb1.appendChild(opt);
-                                            console.log("Option: "  + options);
-                                        }
-                                        var sb2 = document.getElementById('hostife2');
-                                        for (var h1 = host1; h1 <= till; h1++) {
-                                            var opt = document.createElement('option');
-                                            opt.value = h1;
-                                            opt.text = h1;
-                                            sb2.appendChild(opt);
-                                            console.log("Option: "  + options);
-                                        }
-                                        // host1 = 301;
-                                        // till = 350;
-                                        // for (var h1 = host1; h1 <= till; h1++) {
-                                        //     var opt = document.createElement('option');
-                                        //     opt.value = h1;
-                                        //     opt.innerHTML = h1;
-                                        //     sb1.appendChild(opt);
-                                        //     sb2.appendChild(opt);
-                                        //     console.log("Option: "  + options);
-                                        // }
-                                    } 
-                                    // else if ($(this).val() == "Boeing") {
-                                    //     var host1 = 1;
-                                    //     var till = 100;
-                                    //     var options = '<option selected hidden>Select</option>';
-                                    //     for (var h1 = host1; h1 <= till; h1++) {
-                                    //         options += '<option value="'+ h1 +'">' + h1 + '</option>';
-                                    //         console.log("Option: "  + options);
-                                    //     }
-                                    //     document.getElementById("hostife1").innerHTML = options;
-                                    //     document.getElementById("hostife2").innerHTML = options;
-                                    //     var host1 = 201;
-                                    //     var till = 300;
-                                    //     for (var h1 = host1; h1 <= till; h1++) {
-                                    //         options += '<option value="'+ h1 +'">' + h1 + '</option>';
-                                    //         console.log("Option: "  + options);
-                                    //     }
-                                    //     document.getElementById("hostife1").innerHTML = options;
-                                    //     document.getElementById("hostife2").innerHTML = options;
-
-                                    // } else if ($(this).val() == "AirBus") {
-                                    //     var host1 = 1;
-                                    //     var till = 100;
-                                    //     var sb1 = document.querySelector('#hostife1');
-                                    //     var sb2 = document.querySelector('#hostife2');
-                                    //     var options = '<option selected hidden>Select</option>';
-                                    //     for (var h1 = host1; h1 <= till; h1++) {
-                                    //         options = new Option(h1, h1);
-                                    //         sb1.add(options, undefined);
-                                    //         sb2.add(options, undefined);
-
-                                    //         console.log("Option: "  + options);
-
-                                    //     }
-                                        // document.getElementById("hostife1").innerHTML = options;
-                                        // document.getElementById("hostife2").innerHTML = options;
-                                        // var host1 = 201;
-                                        // var till = 300;
-                                        // for (var h1 = host1; h1 <= till; h1++) {
-                                        //     options += '<option value="'+ h1 +'">' + h1 + '</option>';
-                                        //     console.log("Option: "  + options);
-                                        // }
-                                        // document.getElementById("hostife1").innerHTML = options;
-                                        // document.getElementById("hostife2").innerHTML = options;
-                                    // }
-                                });
+                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
                             });
+
                             function validate() {
                                 if ($('#f_type').val() != "" &&
                                     $('#base').val() != "" &&
