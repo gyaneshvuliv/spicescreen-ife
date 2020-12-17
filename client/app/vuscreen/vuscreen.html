@@ -413,8 +413,9 @@
                                         var till = 200;
                                         var sb1 = document.getElementById("hostife1");
                                         var sb2 = document.getElementById("hostife2");
-                                        var option = document.createElement("option");
+                                        var option;
                                         for (var h1 = host1; h1 <= till; h1++) {
+                                            option = document.createElement("option");
                                             option.text = h1;
                                             sb1.add(option);
                                             sb2.add(option);
@@ -425,6 +426,7 @@
                                         till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             option.text = h1;
+                                            option = document.createElement("option")
                                             sb1.add(option);
                                             sb2.add(option);
                                             console.log("Option: "  + options);
