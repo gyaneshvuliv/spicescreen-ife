@@ -411,21 +411,30 @@
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
+                                        var sb1 = document.querySelector('#hostife1');
+                                        var sb2 = document.querySelector('#hostife2');
                                         var options = '<option selected hidden>Select</option>';
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += '<option value="'+ h1 +'">' + h1 + '</option>';
+                                            options = new Option(h1, h1);
+                                            sb1.add(options, undefined);
+                                            sb2.add(options, undefined);
+
                                             console.log("Option: "  + options);
+
                                         }
-                                        document.getElementById("hostife1").innerHTML = options;
-                                        document.getElementById("hostife2").innerHTML = options;
                                         var host1 = 301;
                                         var till = 350;
+                                        var sb1 = document.querySelector('#hostife1');
+                                        var sb2 = document.querySelector('#hostife2');
+                                        var options = '<option selected hidden>Select</option>';
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += '<option value="'+ h1 +'">' + h1 + '</option>';
+                                            options = new Option(h1, h1);
+                                            sb1.add(options, undefined);
+                                            sb2.add(options, undefined);
+
                                             console.log("Option: "  + options);
+
                                         }
-                                        document.getElementById("hostife1").innerHTML = options;
-                                        document.getElementById("hostife2").innerHTML = options;
 
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
@@ -449,13 +458,19 @@
                                     } else if ($(this).val() == "AirBus") {
                                         var host1 = 1;
                                         var till = 100;
+                                        var sb1 = document.querySelector('#hostife1');
+                                        var sb2 = document.querySelector('#hostife2');
                                         var options = '<option selected hidden>Select</option>';
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += '<option value="'+ h1 +'">' + h1 + '</option>';
+                                            options = new Option(h1, h1);
+                                            sb1.add(options, undefined);
+                                            sb2.add(options, undefined);
+
                                             console.log("Option: "  + options);
+
                                         }
-                                        document.getElementById("hostife1").innerHTML = options;
-                                        document.getElementById("hostife2").innerHTML = options;
+                                        // document.getElementById("hostife1").innerHTML = options;
+                                        // document.getElementById("hostife2").innerHTML = options;
                                         var host1 = 201;
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
