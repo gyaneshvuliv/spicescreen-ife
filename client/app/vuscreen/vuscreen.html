@@ -376,14 +376,14 @@
                 <option value="VTZ">VTZ</option>
             </select>
 
-            <label for="fno">Host 1</label><br>
+            <label for="fno">Host IFE 1</label><br>
             <placeholder="Host 1">
-                <select id="host1" ng-model="host1" required>
+                <select id="hostife1" ng-model="hostife1" required>
                 </select>
-                <label for="fno">Host 2</label><br>
+                <label for="fno">Host IFE 2</label><br>
                 <placeholder="Host 2">
                     <br>
-                    <select id="host2" ng-model="host2" required>
+                    <select id="hostife2" ng-model="hostife2" required>
 
                     </select>
                     <label for="Remo">Remote</label><br>
@@ -404,7 +404,7 @@
                         <script>
                             $(document).ready(function () {
                                 validate();
-                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
+                                $('#f_type,#base,#start-date,#from,#to,#fno,#hostife1,#hostife2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
@@ -413,15 +413,15 @@
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
                                         var host1 = 301;
                                         var till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
 
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
@@ -430,15 +430,15 @@
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
                                         var host1 = 201;
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
 
                                     } else if ($(this).val() == "AirBus") {
                                         var host1 = 1;
@@ -447,15 +447,15 @@
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
                                         var host1 = 201;
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
-                                        document.getElementById("host1").innerHTML = options;
-                                        document.getElementById("host2").innerHTML = options;
+                                        document.getElementById("hostife1").innerHTML = options;
+                                        document.getElementById("hostife2").innerHTML = options;
                                     }
                                 });
                             });
