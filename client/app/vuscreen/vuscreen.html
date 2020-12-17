@@ -184,7 +184,7 @@
             <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
             <label>AirCraft Type</label>
 			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
-				<option  value="Select" selected disabled hidden>Select</option>
+				<option  value="Select" selected hidden>Select</option>
 				<option value="Q400">Q400</option>
 				<option value="Boeing">Boeing</option>
 				<option value="AirBus">AirBus</option>
@@ -230,7 +230,7 @@
             </select>
             <label for="base">From</label>
             <select id="from" name="base" ng-model="from_station" required>
-                <option value="" selected>Select</option>
+                <option value="" selected hidden>Select</option>
                 <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
@@ -304,7 +304,7 @@
             </select>
             <label for="base">To</label>
             <select id="to" name="base" ng-model="to_station" required>
-                <option value="">Select</option>
+                <option value="" selected hidden>Select</option>
                 <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
@@ -395,7 +395,7 @@
                         <script>
                             var rem1 = 1;
                             var till = 150;
-                            var options = "<option value=''>Select</option>";
+                            var options = "<option value='' selected hidden>Select</option>";
                             for (var r1 = rem1; r1 <= till; r1++) {
                                 options += "<option>" + r1 + "</option>";
                             }
@@ -410,7 +410,7 @@
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
-                                        var options;
+                                        var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option>" + h1 + "</option>";
                                         }
@@ -427,7 +427,7 @@
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
                                         var till = 100;
-                                        var options = "Select";
+                                        var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option>" + h1 + "</option>";
                                         }
@@ -444,7 +444,7 @@
                                     } else if ($(this).val() == "AirBus") {
                                         var host1 = 1;
                                         var till = 100;
-                                        var options = "Select";
+                                        var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option>" + h1 + "</option>";
                                         }
