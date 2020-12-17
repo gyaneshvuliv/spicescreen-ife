@@ -14,9 +14,9 @@ angular.module('VuscreenApp')
                     modal.style.display = "none";
                 }
             }
-            alert($scope.from_station);
-            alert($scope.hostife1);
-            alert($scope.hostife2);
+            console.log($scope.from_station);
+            console.log($scope.hostife1);
+            console.log($scope.hostife2);
             if ($scope.from_station === $scope.to_station) {
                 document.getElementById("myModal").style.display = "block";
                 document.getElementById("m1").innerHTML = "<b>From</b> and <b>To</b> cannot be Same";
