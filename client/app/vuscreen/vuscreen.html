@@ -411,28 +411,27 @@
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
-                                        var sb1 = document.getElementById("hostife1");
-                                        var sb2 = document.getElementById("hostife2");
+                                        var sb1 = document.getElementById('hostife1');
+                                        var sb2 = document.getElementById('hostife2');
                                         
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            var option = document.createElement("option");
-                                            option.value = h1;
-                                            option.text = h1;
-                                            sb1.appendChild(option);
-                                            sb2.appendChild(option);
+                                            var opt = document.createElement('option');
+                                            opt.value = h1;
+                                            opt.innerHTML = h1;
+                                            sb1.appendChild(opt);
+                                            sb2.appendChild(opt);
                                             console.log("Option: "  + options);
 
                                         }
                                         host1 = 301;
                                         till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            var option = document.createElement("option");
-                                            option.value = h1;
-                                            option.text = h1;
-                                            sb1.appendChild(option);
-                                            sb2.appendChild(option);
+                                            var opt = document.createElement('option');
+                                            opt.value = h1;
+                                            opt.innerHTML = h1;
+                                            sb1.appendChild(opt);
+                                            sb2.appendChild(opt);
                                             console.log("Option: "  + options);
-
                                         }
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
