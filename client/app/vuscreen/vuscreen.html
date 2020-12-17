@@ -407,7 +407,8 @@
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
-                                    alert("410: " + $(this).val());
+                                    alert("410: " + $(this).text());
+                                    alert("411: " + $("#airCrafType").text());
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
