@@ -409,33 +409,27 @@
                                 $("#airCrafType").change(function() {
                                     console.log("AirCrafType: " + $(this).val() );
                                     if ($(this).val() == "Q400") {
-                                        var host1 = 101;
-                                        var till = 200;
-                                        var sb1 = document.querySelector('#hostife1');
-                                        var sb2 = document.querySelector('#hostife2');
-                                        var options = '<option selected hidden>Select</option>';
+                                        let host1 = 101;
+                                        let till = 200;
+                                        let sb1 = document.getElementById("hostife1");
+                                        let sb2 = document.getElementById("hostife2");
+                                        let option = document.createElement("option");
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options = new Option(h1, h1);
-                                            sb1.add(options, undefined);
-                                            sb2.add(options, undefined);
-
+                                            option.text = h1;
+                                            sb1.add(option);
+                                            sb2.add(option);
                                             console.log("Option: "  + options);
 
                                         }
-                                        var host1 = 301;
-                                        var till = 350;
-                                        var sb1 = document.querySelector('#hostife1');
-                                        var sb2 = document.querySelector('#hostife2');
-                                        var options = '<option selected hidden>Select</option>';
-                                        for (var h1 = host1; h1 <= till; h1++) {
-                                            options = new Option(h1, h1);
-                                            sb1.add(options, undefined);
-                                            sb2.add(options, undefined);
-
+                                        host1 = 301;
+                                        till = 350;
+                                        for (var h12 = host1; h12 <= till; h12++) {
+                                            option.text = h12;
+                                            sb1.add(option);
+                                            sb2.add(option);
                                             console.log("Option: "  + options);
 
                                         }
-
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
                                         var till = 100;
