@@ -15,8 +15,8 @@ angular.module('VuscreenApp')
                 }
             }
             alert($scope.from_station);
-            alert($scope.hostD1);
-            alert($scope.hostD2);
+            alert($scope.host1);
+            alert($scope.host2);
             if ($scope.from_station === $scope.to_station) {
                 document.getElementById("myModal").style.display = "block";
                 document.getElementById("m1").innerHTML = "<b>From</b> and <b>To</b> cannot be Same";
@@ -24,7 +24,7 @@ angular.module('VuscreenApp')
                 setTimeout(function () {
                     document.getElementById("myModal").style.display = "none";
                 }, 3000);
-            } else if ($scope.hostD1 === $scope.hostD2) {
+            } else if ($scope.host1 == $scope.host2) {
                 document.getElementById("myModal").style.display = "block";
                 document.getElementById("m1").innerHTML = "<b>Host1</b> and <b>Host2</b> cannot be same";
                 document.getElementById("m2").innerHTML = "Invalide Data";
