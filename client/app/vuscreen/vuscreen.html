@@ -381,31 +381,12 @@
             <placeholder="Host 1">
                 <select id="host1" ng-model="host1" required>
                 </select>
-                <script>
-                    var host1 = 1;
-                    var till = 300;
-                    var options = "<option value=''>Select</option>";
-                    for (var h1 = host1; h1 <= till; h1++) {
-                        options += "<option>" + h1 + "</option>";
-                    }
-                    document.getElementById("host1").innerHTML = options;
-                </script>
-
                 <label for="fno">Host 2</label><br>
                 <placeholder="Host 2">
                     <br>
                     <select id="host2" ng-model="host2" required>
 
                     </select>
-                    <script>
-                        var host2 = 1;
-                        var till = 300;
-                        var options = "<option value=''>Select</option>";
-                        for (var h2 = host2; h2 <= till; h2++) {
-                            options += "<option>" + h2 + "</option>";
-                        }
-                        document.getElementById("host2").innerHTML = options;
-                    </script>
                     <label for="Remo">Remote</label><br>
                     <placeholder="Remote1">
                         <br>
@@ -425,6 +406,59 @@
                             $(document).ready(function () {
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
+                            });
+                            $("#airCrafType").change(function() {
+                                if ($(this).val() == "Q400") {
+                                    var host1 = 101;
+                                    var till = 200;
+                                    var options;
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+                                    var host1 = 301;
+                                    var till = 350;
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+
+                                } else if ($(this).val() == "Boeing") {
+                                    var host1 = 1;
+                                    var till = 100;
+                                    var options = "Select";
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+                                    var host1 = 201;
+                                    var till = 300;
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+
+                                } else if ($(this).val() == "AirBus") {
+                                    var host1 = 1;
+                                    var till = 100;
+                                    var options = "Select";
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+                                    var host1 = 201;
+                                    var till = 300;
+                                    for (var h1 = host1; h1 <= till; h1++) {
+                                        options += "<option>" + h1 + "</option>";
+                                    }
+                                    document.getElementById("host1").innerHTML = options;
+                                    document.getElementById("host2").innerHTML = options;
+                                }
                             });
 
                             function validate() {
