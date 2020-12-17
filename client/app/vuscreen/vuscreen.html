@@ -184,7 +184,6 @@
             <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
             <label>AirCraft Type</label>
 			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
-				<option  value="Select" selected hidden>Select</option>
 				<option value="Q400">Q400</option>
 				<option value="Boeing">Boeing</option>
 				<option value="AirBus">AirBus</option>
@@ -412,14 +411,14 @@
                                         var till = 200;
                                         var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
                                         var host1 = 301;
                                         var till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
@@ -429,14 +428,14 @@
                                         var till = 100;
                                         var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
                                         var host1 = 201;
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
@@ -446,14 +445,14 @@
                                         var till = 100;
                                         var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
                                         var host1 = 201;
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                            options += "<option>" + h1 + "</option>";
+                                            options += "<option value='"+h1+"'>" + h1 + "</option>";
                                         }
                                         document.getElementById("host1").innerHTML = options;
                                         document.getElementById("host2").innerHTML = options;
