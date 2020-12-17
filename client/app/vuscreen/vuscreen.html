@@ -406,8 +406,8 @@
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#hostife1,#hostife2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
-                                    conslog.log("AirCrafType: " + $("#airCrafType").val() );
-                                    conslog.log("AirCrafType: " + $(this).val() );
+                                    console.log("AirCrafType: " + $("#airCrafType").val() );
+                                    console.log("AirCrafType: " + $(this).val() );
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
