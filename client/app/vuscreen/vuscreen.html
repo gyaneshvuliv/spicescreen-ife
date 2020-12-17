@@ -185,9 +185,9 @@
             <label>AirCraft Type</label>
 			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
 				<option value="Select">Select</option>
-				<option value="">Q400</option>
-				<option value="">Boeing</option>
-				<option value="">AirBus</option>
+				<option value="Q400">Q400</option>
+				<option value="Boeing">Boeing</option>
+				<option value="AirBus">AirBus</option>
 			</select>
             <label for="start-date">Date</label>
             <br>
@@ -407,8 +407,7 @@
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
-                                    alert("410: " + $(this).text());
-                                    alert("411: " + $("#airCrafType").text());
+                                    alert("410: " + $(this).val());
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
