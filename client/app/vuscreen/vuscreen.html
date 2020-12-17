@@ -416,19 +416,21 @@
                                         
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             var option = document.createElement("option");
+                                            option.value = h1;
                                             option.text = h1;
-                                            sb1.add(option);
-                                            sb2.add(option);
+                                            sb1.appendChild(option);
+                                            sb2.appendChild(option);
                                             console.log("Option: "  + options);
 
                                         }
                                         host1 = 301;
                                         till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
-                                        var option =  document.createElement("option")
+                                            var option = document.createElement("option");
+                                            option.value = h1;
                                             option.text = h1;
-                                            sb1.add(option);
-                                            sb2.add(option);
+                                            sb1.appendChild(option);
+                                            sb2.appendChild(option);
                                             console.log("Option: "  + options);
 
                                         }
