@@ -14,6 +14,7 @@ angular.module('VuscreenApp')
                     modal.style.display = "none";
                 }
             }
+            alert($scope.from_station);
             alert($scope.host1);
             alert($scope.host2);
             if ($scope.from_station === $scope.to_station) {
