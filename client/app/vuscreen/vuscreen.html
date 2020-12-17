@@ -184,7 +184,7 @@
             <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
             <label>AirCraft Type</label>
 			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
-				<option selected disabled value="Select">Select</option>
+				<option  value="Select" selected disabled hidden>Select</option>
 				<option value="Q400">Q400</option>
 				<option value="Boeing">Boeing</option>
 				<option value="AirBus">AirBus</option>
@@ -215,7 +215,7 @@
             <br>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
-                <option value="">Select</option>
+                <option value="" selected hidden>Select</option>
                 <option value="COK">COK</option>
                 <option value="CCJ">CCJ</option>
                 <option value="DEL">DEL</option>
@@ -230,7 +230,7 @@
             </select>
             <label for="base">From</label>
             <select id="from" name="base" ng-model="from_station" required>
-                <option value="">Select</option>
+                <option value="" selected>Select</option>
                 <option value="AIP">AIP</option>
                 <option value="AMD">AMD</option>
                 <option value="ATQ">ATQ</option>
@@ -407,7 +407,6 @@
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
-                                    alert("410: " + $(this).val());
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
