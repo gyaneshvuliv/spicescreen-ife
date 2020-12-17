@@ -406,12 +406,15 @@
                                 validate();
                                 $('#f_type,#base,#start-date,#from,#to,#fno,#hostife1,#hostife2,#rem1,#airCrafType').change(validate);
                                 $("#airCrafType").change(function() {
+                                    conslog.log("AirCrafType: " );
                                     if ($(this).val() == "Q400") {
                                         var host1 = 101;
                                         var till = 200;
-                                        var options = "<option selected hidden>Select</option>";
+                                        var options;
+                                        // var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
@@ -419,6 +422,7 @@
                                         var till = 350;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
@@ -426,9 +430,10 @@
                                     } else if ($(this).val() == "Boeing") {
                                         var host1 = 1;
                                         var till = 100;
-                                        var options = "<option selected hidden>Select</option>";
+                                        var options;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
@@ -436,6 +441,7 @@
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
@@ -446,6 +452,7 @@
                                         var options = "<option selected hidden>Select</option>";
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
@@ -453,6 +460,7 @@
                                         var till = 300;
                                         for (var h1 = host1; h1 <= till; h1++) {
                                             options += "<option value='"+h1+"'>" + h1 + "</option>";
+                                            console.log("Option: "  + options);
                                         }
                                         document.getElementById("hostife1").innerHTML = options;
                                         document.getElementById("hostife2").innerHTML = options;
