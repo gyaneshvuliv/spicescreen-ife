@@ -4,7 +4,7 @@
 angular.module('VuscreenApp')
     .controller('vuscreenController', function ($scope, $http, $location) {
         $scope.name = $location.search().name
-        $scope.mobile_no = $location.search().mobile_no
+        $scope.mobile_no = $location.search().mobile_no;
         $scope.save = function () {
             var modal = document.getElementById("myModal");
             modal.style.display = "none";
@@ -43,6 +43,7 @@ angular.module('VuscreenApp')
                     host2: $scope.host2,
                     rem: $scope.rem
                 }
+                console.log(parameter)
                 $http.post('/api/vuscreen/upload', parameter).then(function (success) {
                     $scope.data = success;
                     if ($scope.data.status == 200) {

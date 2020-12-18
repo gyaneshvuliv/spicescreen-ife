@@ -30,10 +30,10 @@ exports.IFE_upload = function (req, res) {
   const { name , mobile_no, f_type, start_date, base_station, from, to, fno, airCrafType, host1, host2, rem } = req.body
   let query = "Insert INTO"
     + " vuscreen_ife_data "
-    + " (name, mobile_no, f_type, date, base_station, source, destination, f_no, airCrafType, host1, host2, remote)"
+    + " (name, mobile_no, f_type, date, base_station, source, destination, f_no, air_craft_type, host1, host2, remote)"
     + " VALUES ('" + name + "','" + mobile_no + "','" + f_type + "','" + moment(start_date).format("YYYY-MM-DD") + "','" + base_station
     + "','" + from + "','" + to + "','" + fno + "','" + airCrafType + "'," + host1 + "," + host2 + "," + rem + ")";
-//  console.log(query)
+ console.log(query)
     db.get().query(query, function (err, doc) {
     if (err) { return handleError(res, err); }
     else {

@@ -19,15 +19,14 @@
         }
 
         input[type=text],
-        select,
-        textarea {
+        select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             margin-top: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             resize: vertical;
         }
 
@@ -127,12 +126,12 @@
             background-color: #5cb85c;
             color: white;
         }
-        
+
         .modal-body {
             padding: 0px 37px;
             color: black;
         }
-        
+
         .modal-footer {
             padding: 2px 16px;
             background-color: #5cb85c;
@@ -151,10 +150,23 @@
         .button_green {
             background-color: green !important;
         }
+
+        #m1 {
+            font-size: 16px;
+        }
+
+        #m2 {
+            margin-left: 22px;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <ul>
+            <img style="height: 30px; margin-top:22px; float: right;" src="images/spicejet.png">
+        </ul>
+    </header>
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -170,31 +182,36 @@
             </div>
         </div>
     </div>
-    <h2 id="title">IFE Data and Details</h2>
-
+    <h3 id="title">EFB IFE MANAGEMENT</h3>
     <div class="container" ng-controller="vuscreenController">
         <form id="myForm">
-            <label>Flight Type</label>
-            <select id="f_type" name="f_type" ng-model="f_type" required>
-                <option value="">Select</option>
-                <option value="Domestic">Domestic</option>
-                <option value="International">International</option>
-            </select>
-            <label for="fno">Flight Number</label><br>
-            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
-            <label>AirCraft Type</label>
-			<select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
-				<option value="Select">Select</option>
-				<option value="Q400">Q400</option>
-				<option value="Boeing">Boeing</option>
-				<option value="AirBus">AirBus</option>
-			</select>
             <label for="start-date">Date</label>
-            <br>
             <br>
             <input type="date" id="start-date" onchange="validateDate(this)" ng-model="start_date" name="start_date"
                 required />
             <br>
+            <br>
+            <div style="float:left;width: 42%;">
+                <label>Flight Type</label>
+                <select id="f_type" name="f_type" ng-model="f_type" required>
+                    <option value="">Select</option>
+                    <option value="Domestic">Domestic</option>
+                    <option value="International">International</option>
+                </select>
+            </div>
+            <div style="float: right;width: 42%;">
+                <label>AirCraft Type</label>
+                <select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
+                    <option value="">Select</option>
+                    <option value="Q400">Q400</option>
+                    <option value="Boeing">Boeing</option>
+                    <option value="AirBus">AirBus</option>
+                </select>
+            </div>
+            <br>
+            <label for="fno">Flight Number</label><br>
+            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
+
             <script>
                 var dateControler = {
                     currentDate: null
@@ -212,7 +229,6 @@
                     }
                 }
             </script>
-            <br>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
                 <option value="">Select</option>
@@ -228,174 +244,176 @@
                 <option value="AMD">AMD</option>
                 <option value="JAI">JAI</option>
             </select>
-            <label for="base">From</label>
-            <select id="from" name="base" ng-model="from_station" required>
-                <option value="">Select</option>
-                <option value="AIP">AIP</option>
-                <option value="AMD">AMD</option>
-                <option value="ATQ">ATQ</option>
-                <option value="BHO">BHO</option>
-                <option value="BKK">BKK</option>
-                <option value="BLR">BLR</option>
-                <option value="BOM">BOM</option>
-                <option value="CCJ">CCJ</option>
-                <option value="CCU">CCU</option>
-                <option value="CJB">CJB</option>
-                <option value="CMB">CMB</option>
-                <option value="COK">COK</option>
-                <option value="DAC">DAC</option>
-                <option value="DBR">DBR</option>
-                <option value="DED">DED</option>
-                <option value="DEL">DEL</option>
-                <option value="DHM">DHM</option>
-                <option value="DIB">DIB</option>
-                <option value="DMM">DMM</option>
-                <option value="DXB">DXB</option>
-                <option value="GAU">GAU</option>
-                <option value="GOI">GOI</option>
-                <option value="GOP">GOP</option>
-                <option value="GWL">GWL</option>
-                <option value="HKG">HKG</option>
-                <option value="HYD">HYD</option>
-                <option value="ISK">ISK</option>
-                <option value="IXB">IXB</option>
-                <option value="IXE">IXE</option>
-                <option value="IXG">IXG</option>
-                <option value="IXJ">IXJ</option>
-                <option value="IXL">IXL</option>
-                <option value="IXM">IXM</option>
-                <option value="IXS">IXS</option>
-                <option value="IXU">IXU</option>
-                <option value="IXY">IXY</option>
-                <option value="IXZ">IXZ</option>
-                <option value="JAI">JAI</option>
-                <option value="JDH">JDH</option>
-                <option value="JED">JED</option>
-                <option value="JLR">JLR</option>
-                <option value="JRG">JRG</option>
-                <option value="JSA">JSA</option>
-                <option value="KBL">KBL</option>
-                <option value="KNU">KNU</option>
-                <option value="KQH">KQH</option>
-                <option value="KUT">KUT</option>
-                <option value="MAA">MAA</option>
-                <option value="MCT">MCT</option>
-                <option value="PAT">PAT</option>
-                <option value="PBD">PBD</option>
-                <option value="PNQ">PNQ</option>
-                <option value="PNY">PNY</option>
-                <option value="RAJ">RAJ</option>
-                <option value="RDP">RDP</option>
-                <option value="RKT">RKT</option>
-                <option value="RUH">RUH</option>
-                <option value="SAG">SAG</option>
-                <option value="STV">STV</option>
-                <option value="SXR">SXR</option>
-                <option value="SYD">SYD</option>
-                <option value="TBS">TBS</option>
-                <option value="TCR">TCR</option>
-                <option value="TIR">TIR</option>
-                <option value="TRV">TRV</option>
-                <option value="UDR">UDR</option>
-                <option value="VGA">VGA</option>
-                <option value="VJA">VJA</option>
-                <option value="VNS">VNS</option>
-                <option value="VTZ">VTZ</option>
-            </select>
-            <label for="base">To</label>
-            <select id="to" name="base" ng-model="to_station" required>
-                <option value="">Select</option>
-                <option value="AIP">AIP</option>
-                <option value="AMD">AMD</option>
-                <option value="ATQ">ATQ</option>
-                <option value="BHO">BHO</option>
-                <option value="BKK">BKK</option>
-                <option value="BLR">BLR</option>
-                <option value="BOM">BOM</option>
-                <option value="CCJ">CCJ</option>
-                <option value="CCU">CCU</option>
-                <option value="CJB">CJB</option>
-                <option value="CMB">CMB</option>
-                <option value="COK">COK</option>
-                <option value="DAC">DAC</option>
-                <option value="DBR">DBR</option>
-                <option value="DED">DED</option>
-                <option value="DEL">DEL</option>
-                <option value="DHM">DHM</option>
-                <option value="DIB">DIB</option>
-                <option value="DMM">DMM</option>
-                <option value="DXB">DXB</option>
-                <option value="GAU">GAU</option>
-                <option value="GOI">GOI</option>
-                <option value="GOP">GOP</option>
-                <option value="GWL">GWL</option>
-                <option value="HKG">HKG</option>
-                <option value="HYD">HYD</option>
-                <option value="ISK">ISK</option>
-                <option value="IXB">IXB</option>
-                <option value="IXE">IXE</option>
-                <option value="IXG">IXG</option>
-                <option value="IXJ">IXJ</option>
-                <option value="IXL">IXL</option>
-                <option value="IXM">IXM</option>
-                <option value="IXS">IXS</option>
-                <option value="IXU">IXU</option>
-                <option value="IXY">IXY</option>
-                <option value="IXZ">IXZ</option>
-                <option value="JAI">JAI</option>
-                <option value="JDH">JDH</option>
-                <option value="JED">JED</option>
-                <option value="JLR">JLR</option>
-                <option value="JRG">JRG</option>
-                <option value="JSA">JSA</option>
-                <option value="KBL">KBL</option>
-                <option value="KNU">KNU</option>
-                <option value="KQH">KQH</option>
-                <option value="KUT">KUT</option>
-                <option value="MAA">MAA</option>
-                <option value="MCT">MCT</option>
-                <option value="PAT">PAT</option>
-                <option value="PBD">PBD</option>
-                <option value="PNQ">PNQ</option>
-                <option value="PNY">PNY</option>
-                <option value="RAJ">RAJ</option>
-                <option value="RDP">RDP</option>
-                <option value="RKT">RKT</option>
-                <option value="RUH">RUH</option>
-                <option value="SAG">SAG</option>
-                <option value="STV">STV</option>
-                <option value="SXR">SXR</option>
-                <option value="SYD">SYD</option>
-                <option value="TBS">TBS</option>
-                <option value="TCR">TCR</option>
-                <option value="TIR">TIR</option>
-                <option value="TRV">TRV</option>
-                <option value="UDR">UDR</option>
-                <option value="VGA">VGA</option>
-                <option value="VJA">VJA</option>
-                <option value="VNS">VNS</option>
-                <option value="VTZ">VTZ</option>
-            </select>
-
-            <label for="fno">Host 1</label><br>
-            <placeholder="Host 1">
-                <select id="host1" ng-model="host1" required>
+            <div style="float:left;width: 42%;">
+                <label for="base">From</label>
+                <select id="from" name="base" ng-model="from_station" required>
+                    <option value="">Select</option>
+                    <option value="AIP">AIP</option>
+                    <option value="AMD">AMD</option>
+                    <option value="ATQ">ATQ</option>
+                    <option value="BHO">BHO</option>
+                    <option value="BKK">BKK</option>
+                    <option value="BLR">BLR</option>
+                    <option value="BOM">BOM</option>
+                    <option value="CCJ">CCJ</option>
+                    <option value="CCU">CCU</option>
+                    <option value="CJB">CJB</option>
+                    <option value="CMB">CMB</option>
+                    <option value="COK">COK</option>
+                    <option value="DAC">DAC</option>
+                    <option value="DBR">DBR</option>
+                    <option value="DED">DED</option>
+                    <option value="DEL">DEL</option>
+                    <option value="DHM">DHM</option>
+                    <option value="DIB">DIB</option>
+                    <option value="DMM">DMM</option>
+                    <option value="DXB">DXB</option>
+                    <option value="GAU">GAU</option>
+                    <option value="GOI">GOI</option>
+                    <option value="GOP">GOP</option>
+                    <option value="GWL">GWL</option>
+                    <option value="HKG">HKG</option>
+                    <option value="HYD">HYD</option>
+                    <option value="ISK">ISK</option>
+                    <option value="IXB">IXB</option>
+                    <option value="IXE">IXE</option>
+                    <option value="IXG">IXG</option>
+                    <option value="IXJ">IXJ</option>
+                    <option value="IXL">IXL</option>
+                    <option value="IXM">IXM</option>
+                    <option value="IXS">IXS</option>
+                    <option value="IXU">IXU</option>
+                    <option value="IXY">IXY</option>
+                    <option value="IXZ">IXZ</option>
+                    <option value="JAI">JAI</option>
+                    <option value="JDH">JDH</option>
+                    <option value="JED">JED</option>
+                    <option value="JLR">JLR</option>
+                    <option value="JRG">JRG</option>
+                    <option value="JSA">JSA</option>
+                    <option value="KBL">KBL</option>
+                    <option value="KNU">KNU</option>
+                    <option value="KQH">KQH</option>
+                    <option value="KUT">KUT</option>
+                    <option value="MAA">MAA</option>
+                    <option value="MCT">MCT</option>
+                    <option value="PAT">PAT</option>
+                    <option value="PBD">PBD</option>
+                    <option value="PNQ">PNQ</option>
+                    <option value="PNY">PNY</option>
+                    <option value="RAJ">RAJ</option>
+                    <option value="RDP">RDP</option>
+                    <option value="RKT">RKT</option>
+                    <option value="RUH">RUH</option>
+                    <option value="SAG">SAG</option>
+                    <option value="STV">STV</option>
+                    <option value="SXR">SXR</option>
+                    <option value="SYD">SYD</option>
+                    <option value="TBS">TBS</option>
+                    <option value="TCR">TCR</option>
+                    <option value="TIR">TIR</option>
+                    <option value="TRV">TRV</option>
+                    <option value="UDR">UDR</option>
+                    <option value="VGA">VGA</option>
+                    <option value="VJA">VJA</option>
+                    <option value="VNS">VNS</option>
+                    <option value="VTZ">VTZ</option>
                 </select>
-                <script>
-                    var host1 = 1;
-                    var till = 300;
-                    var options = "<option value=''>Select</option>";
-                    for (var h1 = host1; h1 <= till; h1++) {
-                        options += "<option>" + h1 + "</option>";
-                    }
-                    document.getElementById("host1").innerHTML = options;
-                </script>
-
-                <label for="fno">Host 2</label><br>
-                <placeholder="Host 2">
-                    <br>
-                    <select id="host2" ng-model="host2" required>
-
+            </div>
+            <div style="float:right;width: 42%;">
+                <label for="base">To</label>
+                <select id="to" name="base" ng-model="to_station" required>
+                    <option value="">Select</option>
+                    <option value="AIP">AIP</option>
+                    <option value="AMD">AMD</option>
+                    <option value="ATQ">ATQ</option>
+                    <option value="BHO">BHO</option>
+                    <option value="BKK">BKK</option>
+                    <option value="BLR">BLR</option>
+                    <option value="BOM">BOM</option>
+                    <option value="CCJ">CCJ</option>
+                    <option value="CCU">CCU</option>
+                    <option value="CJB">CJB</option>
+                    <option value="CMB">CMB</option>
+                    <option value="COK">COK</option>
+                    <option value="DAC">DAC</option>
+                    <option value="DBR">DBR</option>
+                    <option value="DED">DED</option>
+                    <option value="DEL">DEL</option>
+                    <option value="DHM">DHM</option>
+                    <option value="DIB">DIB</option>
+                    <option value="DMM">DMM</option>
+                    <option value="DXB">DXB</option>
+                    <option value="GAU">GAU</option>
+                    <option value="GOI">GOI</option>
+                    <option value="GOP">GOP</option>
+                    <option value="GWL">GWL</option>
+                    <option value="HKG">HKG</option>
+                    <option value="HYD">HYD</option>
+                    <option value="ISK">ISK</option>
+                    <option value="IXB">IXB</option>
+                    <option value="IXE">IXE</option>
+                    <option value="IXG">IXG</option>
+                    <option value="IXJ">IXJ</option>
+                    <option value="IXL">IXL</option>
+                    <option value="IXM">IXM</option>
+                    <option value="IXS">IXS</option>
+                    <option value="IXU">IXU</option>
+                    <option value="IXY">IXY</option>
+                    <option value="IXZ">IXZ</option>
+                    <option value="JAI">JAI</option>
+                    <option value="JDH">JDH</option>
+                    <option value="JED">JED</option>
+                    <option value="JLR">JLR</option>
+                    <option value="JRG">JRG</option>
+                    <option value="JSA">JSA</option>
+                    <option value="KBL">KBL</option>
+                    <option value="KNU">KNU</option>
+                    <option value="KQH">KQH</option>
+                    <option value="KUT">KUT</option>
+                    <option value="MAA">MAA</option>
+                    <option value="MCT">MCT</option>
+                    <option value="PAT">PAT</option>
+                    <option value="PBD">PBD</option>
+                    <option value="PNQ">PNQ</option>
+                    <option value="PNY">PNY</option>
+                    <option value="RAJ">RAJ</option>
+                    <option value="RDP">RDP</option>
+                    <option value="RKT">RKT</option>
+                    <option value="RUH">RUH</option>
+                    <option value="SAG">SAG</option>
+                    <option value="STV">STV</option>
+                    <option value="SXR">SXR</option>
+                    <option value="SYD">SYD</option>
+                    <option value="TBS">TBS</option>
+                    <option value="TCR">TCR</option>
+                    <option value="TIR">TIR</option>
+                    <option value="TRV">TRV</option>
+                    <option value="UDR">UDR</option>
+                    <option value="VGA">VGA</option>
+                    <option value="VJA">VJA</option>
+                    <option value="VNS">VNS</option>
+                    <option value="VTZ">VTZ</option>
+                </select>
+            </div>
+            <div>
+                <div style="float:left;width: 42%;">
+                    <label>IFE Box1 Number</label>
+                    <select id="host1" class="host1" ng-model="host1" required>
+                    </select>
+                    <script>
+                        var host1 = 1;
+                        var till = 300;
+                        var options = "<option value=''>Select</option>";
+                        for (var h1 = host1; h1 <= till; h1++) {
+                            options += "<option>" + h1 + "</option>";
+                        }
+                        document.getElementById("host1").innerHTML = options;
+                    </script>
+                </div>
+                <div style="float:right;width: 42%;">
+                    <label>IFE Box2 Number</label>
+                    <select id="host2" class="host2" ng-model="host2" required>
                     </select>
                     <script>
                         var host2 = 1;
@@ -406,49 +424,114 @@
                         }
                         document.getElementById("host2").innerHTML = options;
                     </script>
-                    <label for="Remo">Remote</label><br>
-                    <placeholder="Remote1">
-                        <br>
-                        <select id="rem1" ng-model="rem" required>
-                        </select>
-                        <script>
-                            var rem1 = 1;
-                            var till = 150;
+                </div>
+                <script>
+                    $("#airCrafType").change(function () {
+                        // alert($(this).val());
+                        // alert();
+                        if ($(this).val() == "Q400") {
+                            var host1 = 101;
+                            var till = 200;
                             var options = "<option value=''>Select</option>";
-                            for (var r1 = rem1; r1 <= till; r1++) {
-                                options += "<option>" + r1 + "</option>";
+                            for (var h1 = host1; h1 <= till; h1++) {
+                                options += "<option>" + h1 + "</option>";
                             }
-                            document.getElementById("rem1").innerHTML = options;
-                        </script>
-                        <input class="button_grey" id="register" type="submit" ng-click="save()" value="Submit">
-                        <script>
-                            $(document).ready(function () {
-                                validate();
-                                $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
-                            });
+                            // document.getElementById("host1").innerHTML = options;
+                            // document.getElementById("host2").innerHTML = options;
+                            var host2 = 301;
+                            var till2 = 350;
+                            // var options = "<option value=''>Select</option>";
+                            for (var h2 = host2; h2 <= till2; h2++) {
+                                options += "<option>" + h2 + "</option>";
+                            }
+                            document.getElementById("host1").innerHTML = options;
+                            document.getElementById("host2").innerHTML = options;
 
-                            function validate() {
-                                if ($('#f_type').val() != "" &&
-                                    $('#base').val() != "" &&
-                                    $('#start-date').val() != "" &&
-                                    $('#from').val() != "" &&
-                                    $('#to').val() != "" &&
-                                    $('#fno').val() != "" &&
-                                    $('#airCrafType').val() != "" &&
-                                    $('#host1').val() != "" &&
-                                    $('#host2').val() != "" &&
-                                    $('#rem1').val() != "") {
-                                    $('#register').removeClass('button_grey');
-                                    $('#register').addClass('button_green');
-                                    $('#register').removeAttr('disabled');
-                                }
-                                else {
-                                    $("input[type=submit]").prop("disabled", true);
-                                    $('#register').removeClass('button_green');
-                                    $('#register').addClass('button_grey');
-                                }
+                        } else if ($(this).val() == "Boeing") {
+                            var host1 = 1;
+                            var till = 100;
+                            var options = "<option value=''>Select</option>";
+                            for (var h1 = host1; h1 <= till; h1++) {
+                                options += "<option>" + h1 + "</option>";
                             }
-                        </script>
+                            // document.getElementById("host1").innerHTML = options;
+                            // document.getElementById("host2").innerHTML = options;
+                            var host2 = 201;
+                            var till2 = 300;
+                            // var options = "<option value=''>Select</option>";
+                            for (var h2 = host2; h2 <= till2; h2++) {
+                                options += "<option>" + h2 + "</option>";
+                            }
+                            document.getElementById("host1").innerHTML = options;
+                            document.getElementById("host2").innerHTML = options;
+
+                        } else if ($(this).val() == "AirBus") {
+                            var host1 = 1;
+                            var till = 100;
+                            var options = "<option value=''>Select</option>";
+                            for (var h1 = host1; h1 <= till; h1++) {
+                                options += "<option>" + h1 + "</option>";
+                            }
+                            // document.getElementById("host1").innerHTML = options;
+                            // document.getElementById("host2").innerHTML = options;
+                            var host2 = 201;
+                            var till2 = 300;
+                            // var options = "<option value=''>Select</option>";
+                            for (var h2 = host2; h2 <= till2; h2++) {
+                                options += "<option>" + h2 + "</option>";
+                            }
+                            document.getElementById("host1").innerHTML = options;
+                            document.getElementById("host2").innerHTML = options;
+                        }
+                    });
+                </script>
+            </div>
+            <div style="clear: both;">
+                <label>Cabin Crew Remote</label><br>
+                <select id="rem1" ng-model="rem" required>
+                </select>
+                <script>
+                    var rem1 = 1;
+                    var till = 150;
+                    var options = "<option value=''>Select</option>";
+                    for (var r1 = rem1; r1 <= till; r1++) {
+                        options += "<option>" + r1 + "</option>";
+                    }
+                    document.getElementById("rem1").innerHTML = options;
+                </script>
+            </div>
+
+            <input class="button_grey" id="register" type="submit" ng-click="save()" value="SUBMIT"
+                style="margin-left: 130px;height: 60px;width: 130px;">
+            <script>
+                $(document).ready(function () {
+                    validate();
+                    $('#f_type,#base,#start-date,#from,#to,#fno,#host1,#host2,#rem1,#airCrafType').change(validate);
+                });
+
+                function validate() {
+                    if ($('#f_type').val() != "" &&
+                        $('#base').val() != "" &&
+                        $('#start-date').val() != "" &&
+                        $('#from').val() != "" &&
+                        $('#to').val() != "" &&
+                        $('#fno').val() != "" &&
+                        $('#airCrafType').val() != "" &&
+                        $('#host1').val() != "" &&
+                        $('#host2').val() != "" &&
+                        $('#rem1').val() != "") {
+                        $('#register').removeClass('button_grey');
+                        $('#register').addClass('button_green');
+                        $('#register').removeAttr('disabled');
+                    }
+                    else {
+                        $("input[type=submit]").prop("disabled", true);
+                        $('#register').removeClass('button_green');
+                        $('#register').addClass('button_grey');
+                    }
+                }
+            </script>
+
         </form>
     </div>
 
