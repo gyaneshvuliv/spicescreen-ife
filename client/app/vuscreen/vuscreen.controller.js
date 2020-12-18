@@ -2,7 +2,8 @@
 
 
 angular.module('VuscreenApp')
-    .controller('vuscreenController', function ($scope, $http, $location) {
+    .controller('vuscreenController', function ($scope, $http, $location,$filter) {
+        $scope.start_date =$filter("date")(Date.now(), 'yyyy-MM-dd');
         $scope.name = $location.search().name
         $scope.mobile_no = $location.search().mobile_no;
         $scope.save = function () {
@@ -43,7 +44,6 @@ angular.module('VuscreenApp')
                     host2: $scope.host2,
                     rem: $scope.rem
                 }
-                console.log(parameter)
                 $http.post('/api/vuscreen/upload', parameter).then(function (success) {
                     $scope.data = success;
                     if ($scope.data.status == 200) {
@@ -54,7 +54,7 @@ angular.module('VuscreenApp')
                             document.getElementById("myModal").style.display = "none";
                             window.location.reload()
                         }, 2000);
-                        
+
                     } else {
                         alert("Somthing went wrong, try again later.")
                     }
