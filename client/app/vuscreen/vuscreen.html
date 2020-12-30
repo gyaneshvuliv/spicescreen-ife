@@ -6,7 +6,1523 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: black;
+            color: white;
+            margin-top: -21px;
+        }
+
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 14px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            color: black;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+
+        /* Modal Content */
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+
+        /* Add Animation */
+
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        .modal-header {
+            padding: 0px 41px;
+            background-color: red;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 0px 37px;
+            color: black;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        #title {
+            /* new added */
+            padding-top: 21px;
+            margin-left: 24px;
+            font-size: 19px;
+        }
+
+        .button_grey {
+            background-color: grey !important;
+        }
+
+        .button_green {
+            background-color: green !important;
+        }
+
+        #m1 {
+            font-size: 13px;
+        }
+
+        #m2 {
+            margin-left: -8px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        #right-logo {
+            height: 30px;
+            margin-top: -4px;
+            float: right;
+        }
+
+        #flight_type {
+            float: left;
+            width: 42%;
+        }
+
+        #aircraft {
+            float: left;
+            width: 42%;
+            margin-left: 15%;
+        }
+
+        #b_from {
+            float: left;
+            width: 42%;
+        }
+
+        #b_To {
+            float: left;
+            width: 42%;
+            margin-left: 15%;
+        }
+
+        #box1 {
+            float: left;
+            width: 42%;
+        }
+
+        #box2 {
+            float: left;
+            width: 42%;
+            margin-left: 15%;
+        }
+
+        #register {
+            margin-left: 100px;
+            height: 60px;
+            width: 120px;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 359px) {
+            #title {
+                margin-left: 4px;
+                font-size: 17px;
+            }
+
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                color: black;
+                padding: 20px;
+            }
+
+            #right-logo {
+                height: 29px;
+                margin-top: -8px;
+                float: right;
+            }
+
+            #date {
+                width: 47%;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 4px;
+                height: 35px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 85%;
+            }
+
+            #flight_type {
+                float: left;
+                width: 32%;
+                margin-top: 2px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+                margin-top: 2px;
+            }
+
+            #b_from {
+                float: left;
+                width: 32%;
+            }
+
+            #b_To {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #box1 {
+                float: left;
+                width: 32%;
+            }
+
+            #box2 {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #register {
+                margin-left: 78px;
+                height: 40px;
+                width: 117px;
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (min-width: 360px) and (max-width: 419px) {
+            #title {
+                margin-left: 8px;
+                font-size: 17px;
+            }
+
+            #date {
+                width: 54%;
+            }
+
+            #right-logo {
+                height: 29px;
+                margin-top: -8px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 3px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 12px;
+                height: 33px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 87%;
+            }
+
+            #flight_type {
+                float: left;
+                width: 32%;
+                margin-top: 12px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+                margin-top: 12px;
+            }
+
+            #b_from {
+                float: left;
+                width: 32%;
+            }
+
+            #b_To {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #box1 {
+                float: left;
+                width: 32%;
+            }
+
+            #box2 {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #register {
+                margin-left: 30%;
+                height: 65px;
+                width: 130px;
+            }
+        }
+
+        @media screen and (min-width: 420px) and (max-width: 479px) {
+            #title {
+                margin-left: 7px;
+                font-size: 16px;
+            }
+
+            #date {
+                width: 34%;
+            }
+
+            #right-logo {
+                height: 29px;
+                margin-top: -8px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 3px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 3px;
+                height: 23px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 87%;
+            }
+
+            #flight_type {
+                float: left;
+                width: 32%;
+                margin-top: 6px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+                margin-top: 12px;
+            }
+
+            #b_from {
+                float: left;
+                width: 32%;
+            }
+
+            #b_To {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #box1 {
+                float: left;
+                width: 32%;
+            }
+
+            #box2 {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #register {
+                margin-left: 32%;
+                height: 40px;
+                width: 130px;
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (min-width: 480px) and (max-width: 619px) {
+            #title {
+                margin-left: 7px;
+                font-size: 16px;
+            }
+
+            #date {
+                width: 34%;
+            }
+
+            #right-logo {
+                height: 29px;
+                margin-top: -8px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 8px;
+                height: 37px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 87%;
+            }
+
+            #flight_type {
+                float: left;
+                width: 32%;
+                margin-top: 6px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+                margin-top: 12px;
+            }
+
+            #b_from {
+                float: left;
+                width: 32%;
+            }
+
+            #b_To {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #box1 {
+                float: left;
+                width: 32%;
+            }
+
+            #box2 {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #register {
+                margin-left: 32%;
+                height: 44px;
+                width: 130px;
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (min-width: 620px) and (max-width: 767px) {
+            #title {
+                margin-left: 7px;
+                font-size: 22px;
+            }
+
+            #date {
+                width: 34%;
+            }
+
+            #right-logo {
+                height: 39px;
+                margin-top: -11px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 8px;
+                height: 47px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 19px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 32%;
+                margin-top: 6px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+                margin-top: 12px;
+            }
+
+            #b_from {
+                float: left;
+                width: 32%;
+            }
+
+            #b_To {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #box1 {
+                float: left;
+                width: 32%;
+            }
+
+            #box2 {
+                float: left;
+                width: 32%;
+                margin-left: 22%;
+            }
+
+            #register {
+                margin-left: 33%;
+                height: 75px;
+                width: 156px;
+                margin-top: 5px;
+                font-size: 22px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            #title {
+                margin-left: 9px;
+                font-size: 32px;
+            }
+
+            #base1 {
+                font-size: 21px;
+            }
+
+            #rem1 {
+                font-size: 21px;
+            }
+
+            #date {
+                width: 34%;
+                height: 61px;
+                font-size: 21px;
+            }
+
+            #fno {
+                font-size: 21px;
+            }
+
+            #right-logo {
+                height: 52px;
+                margin-top: -11px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 8px;
+                height: 62px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 21px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 21px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 21px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 21px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 21px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 21px;
+            }
+
+            #register {
+                margin-left: 33%;
+                height: 104px;
+                width: 220px;
+                margin-top: 5px;
+                font-size: 29px;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1023px) {
+            #title {
+                margin-left: 9px;
+                font-size: 32px;
+            }
+
+            #base1 {
+                font-size: 21px;
+            }
+
+            #rem1 {
+                font-size: 21px;
+            }
+
+            #date {
+                width: 34%;
+                height: 61px;
+                font-size: 21px;
+            }
+
+            #fno {
+                font-size: 21px;
+            }
+
+            #right-logo {
+                height: 52px;
+                margin-top: -11px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                height: 65px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 21px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 21px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 21px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 21px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 21px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 21px;
+            }
+
+            #register {
+                margin-left: 37%;
+                height: 104px;
+                width: 220px;
+                margin-top: 5px;
+                font-size: 29px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1199px) {
+            #title {
+                margin-left: 33px;
+                font-size: 38px;
+            }
+
+            #base1 {
+                font-size: 30px;
+            }
+
+            #rem1 {
+                font-size: 30px;
+            }
+
+            #date {
+                width: 34%;
+                height: 61px;
+                font-size: 30px;
+            }
+
+            #fno {
+                font-size: 30px;
+            }
+
+            #right-logo {
+                height: 62px;
+                margin-top: -14px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 14px;
+                height: 80px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 30px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #register {
+                margin-left: 35%;
+                height: 117px;
+                width: 249px;
+                margin-top: 5px;
+                font-size: 30px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) and (max-width: 1279px) {
+            #title {
+                margin-left: 33px;
+                font-size: 42px;
+            }
+
+            #base1 {
+                font-size: 30px;
+            }
+
+            #rem1 {
+                font-size: 30px;
+            }
+
+            #date {
+                width: 34%;
+                height: 61px;
+                font-size: 30px;
+            }
+
+            #fno {
+                font-size: 30px;
+            }
+
+            #right-logo {
+                height: 62px;
+                margin-top: -14px;
+                float: right;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 82px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 30px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #register {
+                margin-left: 37%;
+                height: 131px;
+                width: 264px;
+                margin-top: 5px;
+                font-size: 33px;
+            }
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1365px) {
+            #title {
+                margin-left: 65px;
+                font-size: 48px;
+            }
+
+            #base1 {
+                font-size: 30px;
+            }
+
+            #rem1 {
+                font-size: 30px;
+            }
+
+            #date {
+                width: 34%;
+                height: 61px;
+                font-size: 30px;
+            }
+
+            #fno {
+                font-size: 30px;
+            }
+
+            #right-logo {
+                height: 62px;
+                margin-top: -14px;
+                float: right;
+                margin-right: 35px;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 86px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 34px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 30px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 30px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 30px;
+            }
+
+            #register {
+                margin-left: 36%;
+                height: 139px;
+                width: 291px;
+                margin-top: 5px;
+                font-size: 33px;
+            }
+        }
+
+        @media screen and (min-width: 1366px) and (max-width: 1439px) {
+            #title {
+                margin-left: 103px;
+                font-size: 51px;
+            }
+
+            #base1 {
+                font-size: 34px;
+            }
+
+            #rem1 {
+                font-size: 34px;
+            }
+
+            #date {
+                width: 34%;
+                height: 66px;
+                font-size: 34px;
+            }
+
+            #fno {
+                font-size: 34px;
+            }
+
+            #right-logo {
+                height: 71px;
+                margin-top: -14px;
+                float: right;
+                margin-right: 85px;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 94px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 37px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 34px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 34px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 34px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 34px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 34px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 34px;
+            }
+
+            #register {
+                margin-left: 35%;
+                height: 153px;
+                width: 307px;
+                margin-top: 5px;
+                font-size: 33px;
+            }
+        }
+
+        @media screen and (min-width: 1440px) and (max-width: 1599px) {
+            #title {
+                margin-left: 137px;
+                font-size: 53px;
+            }
+
+            #base1 {
+                font-size: 34px;
+            }
+
+            #rem1 {
+                font-size: 34px;
+            }
+
+            #date {
+                width: 34%;
+                height: 66px;
+                font-size: 34px;
+            }
+
+            #fno {
+                font-size: 34px;
+            }
+
+            #right-logo {
+                height: 77px;
+                margin-top: -13px;
+                float: right;
+                margin-right: 105px;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 103px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 9px;
+                font-weight: 700;
+                font-size: 40px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 34px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 34px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 34px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 34px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 34px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 34px;
+            }
+
+            #register {
+                margin-left: 34%;
+                height: 164px;
+                width: 322px;
+                margin-top: 5px;
+                font-size: 33px;
+            }
+        }
+
+        @media screen and (min-width: 1600px) and (max-width: 1679px) {
+            #title {
+                margin-left: 220px;
+                font-size: 53px;
+            }
+
+            #base1 {
+                font-size: 40px;
+            }
+
+            #rem1 {
+                font-size: 40px;
+            }
+
+            #date {
+                width: 34%;
+                height: 66px;
+                font-size: 40px;
+            }
+
+            #fno {
+                font-size: 40px;
+            }
+
+            #right-logo {
+                height: 77px;
+                margin-top: -13px;
+                float: right;
+                margin-right: 180px;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 103px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 9px;
+                font-weight: 700;
+                font-size: 45px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 40px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 40px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 40px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 40px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 40px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 40px;
+            }
+
+            #register {
+                margin-left: 34%;
+                height: 164px;
+                width: 322px;
+                margin-top: 5px;
+                font-size: 40px;
+            }
+        }
+
+        @media screen and (min-width: 1680px) and (max-width: 1919px) {
+            #title {
+                margin-left: 255px;
+                font-size: 58px;
+            }
+
+            #base1 {
+                font-size: 45px;
+            }
+
+            #rem1 {
+                font-size: 45px;
+            }
+
+            #date {
+                width: 34%;
+                height: 66px;
+                font-size: 45px;
+            }
+
+            #fno {
+                font-size: 45px;
+            }
+
+            #right-logo {
+                height: 90px;
+                margin-top: -18px;
+                float: right;
+                margin-right: 223px;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 4px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 16px;
+                height: 133px;
+                resize: vertical;
+            }
+
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 9px;
+                font-weight: 700;
+                font-size: 49px;
+            }
+
+            #flight_type {
+                float: left;
+                width: 34%;
+                margin-top: 8px;
+                font-size: 45px;
+            }
+
+            #aircraft {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                margin-top: 8px;
+                font-size: 45px;
+            }
+
+            #b_from {
+                float: left;
+                width: 34%;
+                font-size: 45px;
+            }
+
+            #b_To {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 45px;
+            }
+
+            #box1 {
+                float: left;
+                width: 34%;
+                font-size: 45px;
+            }
+
+            #box2 {
+                float: left;
+                width: 34%;
+                margin-left: 24%;
+                font-size: 45px;
+            }
+
+            #register {
+                margin-left: 32%;
+                height: 204px;
+                width: 389px;
+                margin-top: 5px;
+                font-size: 49px;
+            }
+        }
+    </style>
+    <!-- <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: black;
@@ -158,13 +1674,13 @@
         #m2 {
             margin-left: 22px;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
     <header>
         <ul>
-            <img style="height: 30px; margin-top:22px; float: right;" src="images/spicejet.png">
+            <img id="right-logo" src="images/spicejet.png">
         </ul>
     </header>
     <!-- The Modal -->
@@ -174,7 +1690,6 @@
             <div class="modal-header">
                 <h2 id="m2"></h2>
             </div>
-            <br>
             <div class="modal-body">
                 <p id="m1"></p>
             </div>
@@ -187,11 +1702,10 @@
         <form id="myForm">
             <label for="start-date">Date</label>
             <br>
-            <input type="date" id="startdate" onchange="validateDate(this)" ng-model="start_date" value="{{start_date}}" name="start_date"
-                required />
+            <input type="datetime-local" id="startdate" onload="getDate();" onchange="validateDate(this)"
+                ng-model="start_date" value="{{start_date}}" name="start_date" required />
             <br>
-            <br>
-            <div style="float:left;width: 42%;">
+            <div id="flight_type">
                 <label>Flight Type</label>
                 <select id="f_type" name="f_type" ng-model="f_type" required>
                     <option value="">Select</option>
@@ -199,7 +1713,7 @@
                     <option value="International">International</option>
                 </select>
             </div>
-            <div style="float: right;width: 42%;">
+            <div id="aircraft">
                 <label>AirCraft Type</label>
                 <select id="airCrafType" name="airCrafType" ng-model="airCrafType" required>
                     <option value="">Select</option>
@@ -209,9 +1723,11 @@
                 </select>
             </div>
             <br>
-            <label for="fno">Flight Number</label><br>
-            <input type="text" name="fno" ng-model="fno" placeholder="SG-" required>
-
+            <div style="clear: both;">
+                <label for="fno">Flight Number</label><br>
+                <input type="text" name="fno" ng-model="fno" placeholder="SG-" style="text-transform:uppercase"
+                    required>
+            </div>
             <script>
                 var dateControler = {
                     currentDate: null
@@ -220,7 +1736,6 @@
                 function validateDate(id) {
                     var now = new Date();
                     var selectedDate = new Date($(id).val());
-
                     console.log(selectedDate)
                     if (selectedDate > now) {
                         $(id).val(dateControler.currentDate)
@@ -228,6 +1743,11 @@
                         dateControler.currentDate = $(id).val();
                     }
                 }
+                $(document).ready(function () {
+                    var now = new Date();
+                    var today = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
+                    $('#date').val(today);
+                });
             </script>
             <label for="base">Base Station</label>
             <select id="base" name="base" ng-model="base_station" required>
@@ -244,7 +1764,7 @@
                 <option value="AMD">AMD</option>
                 <option value="JAI">JAI</option>
             </select>
-            <div style="float:left;width: 42%;">
+            <div id="b_from">
                 <label for="base">From</label>
                 <select id="from" name="base" ng-model="from_station" required>
                     <option value="">Select</option>
@@ -320,7 +1840,7 @@
                     <option value="VTZ">VTZ</option>
                 </select>
             </div>
-            <div style="float:right;width: 42%;">
+            <div id="b_To">
                 <label for="base">To</label>
                 <select id="to" name="base" ng-model="to_station" required>
                     <option value="">Select</option>
@@ -397,8 +1917,8 @@
                 </select>
             </div>
             <div>
-                <div style="float:left;width: 42%;">
-                    <label>IFE Box1 Number</label>
+                <div id="box1">
+                    <label>IFE Box1</label>
                     <select id="host1" class="host1" ng-model="host1" required>
                     </select>
                     <script>
@@ -411,8 +1931,8 @@
                         document.getElementById("host1").innerHTML = options;
                     </script>
                 </div>
-                <div style="float:right;width: 42%;">
-                    <label>IFE Box2 Number</label>
+                <div id="box2">
+                    <label>IFE Box2</label>
                     <select id="host2" class="host2" ng-model="host2" required>
                     </select>
                     <script>

@@ -3,7 +3,7 @@
 
 angular.module('VuscreenApp')
     .controller('vuscreenController', function ($scope, $http, $location,$filter) {
-        $scope.start_date =$filter("date")(Date.now(), 'yyyy-MM-dd');
+        $scope.start_date =$filter("date")(Date.now(), 'yyyy-MM-dd HH:mm:ss.sss');
         $scope.name = $location.search().name
         $scope.mobile_no = $location.search().mobile_no;
         $scope.save = function () {
