@@ -40,6 +40,7 @@ angular.module('VuscreenApp')
                     from: $scope.from_station,
                     to: $scope.to_station,
                     fno: $scope.fno,
+                    ftime: $scope.ftime,
                     host1: $scope.host1,
                     host2: $scope.host2,
                     rem: $scope.rem
