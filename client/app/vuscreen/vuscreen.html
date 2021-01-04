@@ -230,7 +230,7 @@
 
             #right-logo {
                 height: 29px;
-                margin-top: -8px;
+                margin-top: 10px;
                 float: right;
             }
 
@@ -313,7 +313,7 @@
 
             #right-logo {
                 height: 29px;
-                margin-top: -8px;
+                margin-top:11px;
                 float: right;
             }
 
@@ -373,7 +373,7 @@
             }
 
             #register {
-                margin-left: 30%;
+                margin-left: 29%;
                 height: 65px;
                 width: 130px;
             }
@@ -2021,8 +2021,8 @@
                 </script>
             </div>
 
-            <input class="button_grey" id="register" type="submit" ng-click="save()" value="SUBMIT"
-                style="margin-left: 130px;height: 60px;width: 130px;">
+	    <input class="button_grey" id="register" type="submit" ng-click="save()" value="SUBMIT"/>
+              
             <script>
                 $(document).ready(function () {
                     validate();
@@ -2045,7 +2045,7 @@
                         $('#register').removeAttr('disabled');
                     }
                     else {
-                        $("input[type=submit]").prop("disabled", true);
+		      $("input[type=submit]").prop("disabled", true);
                         $('#register').removeClass('button_green');
                         $('#register').addClass('button_grey');
                     }
