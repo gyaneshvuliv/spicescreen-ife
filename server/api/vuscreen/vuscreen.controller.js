@@ -115,6 +115,50 @@ exports.varify_otp = function (req, res) {
   // })
 }
 
+exports.get_base_stations = function (req, res) {
+  let query = "Select station from "
+    + " ife_base_stations "
+    db.get().query(query, function (err, doc) {
+    if (err) { return handleError(res, err); }
+    else {
+      return res.status(200).json(doc);
+    }
+  })
+}
+
+exports.get_stations = function (req, res) {
+  let query = "Select station from "
+    + " ife_stations "
+    db.get().query(query, function (err, doc) {
+    if (err) { return handleError(res, err); }
+    else {
+      return res.status(200).json(doc);
+    }
+  })
+}
+
+exports.get_hosts = function (req, res) {
+  let query = "Select host from "
+    + " ife_host_list "
+    db.get().query(query, function (err, doc) {
+    if (err) { return handleError(res, err); }
+    else {
+      return res.status(200).json(doc);
+    }
+  })
+}
+
+exports.get_aircraft = function (req, res) {
+  let query = "Select aircraft from "
+    + " ife_aircraft_list "
+    db.get().query(query, function (err, doc) {
+    if (err) { return handleError(res, err); }
+    else {
+      return res.status(200).json(doc);
+    }
+  })
+}
+
 const crypto = require('crypto');
 let secureVal = 0;
 
