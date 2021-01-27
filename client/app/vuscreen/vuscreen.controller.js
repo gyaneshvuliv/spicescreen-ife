@@ -43,7 +43,8 @@ angular.module('VuscreenApp')
                     ftime: $scope.ftime,
                     host1: $scope.host1,
                     host2: $scope.host2,
-                    rem: $scope.rem
+                    rem: $scope.rem,
+                    type: "web"
                 }
                 $http.post('/api/vuscreen/upload', parameter).then(function (success) {
                     $scope.data = success;
