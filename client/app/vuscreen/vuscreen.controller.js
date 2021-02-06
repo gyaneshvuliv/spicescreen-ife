@@ -31,8 +31,8 @@ angular.module('VuscreenApp')
                 }, 3000);
             } else {
                 var parameter = {
-                    name: $scope.name,
-                    mobile_no: $scope.mobile_no,
+                    name: $scope.fulname,
+                    mobile_no: $scope.phn,
                     f_type: $scope.f_type,
                     airCrafType: $scope.airCrafType,
                     base_station: $scope.base_station,

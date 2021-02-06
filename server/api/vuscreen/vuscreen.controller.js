@@ -29,14 +29,13 @@ exports.IFE_registration = function (req, res) {
 exports.IFE_upload = function (req, res) {
   const { name , mobile_no, f_type, start_date, base_station, from, to, fno, ftime, airCrafType, host1, host2, rem, type } = req.body
   let f_time;
-  console.log(type)
-  console.log(f_time)
+  console.log(name)
+  console.log(mobile_no)
   if(type == "web"){
     f_time = moment(ftime).format('HH:mm')
   }else{
     f_time = ftime
   }
-  console.log(f_time)
   let query = "Insert INTO"
     + " vuscreen_ife_data "
     + " (name, mobile_no, f_type, date, base_station, source, destination, f_no, air_craft_type, host1, host2, remote,sync_datetime,ftime)"

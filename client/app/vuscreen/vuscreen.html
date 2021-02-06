@@ -1873,6 +1873,14 @@
     <h3 id="title">EFB IFE MANAGEMENT</h3>
     <div class="container" ng-controller="vuscreenController">
         <form id="myForm">
+            <div>
+                <label>Base Engineer Name</label>
+                <input ng-model="fulname" type="text" id="fulname" placeholder="Full Name">
+            </div>
+            <div>
+                <label>Phone Number</label>
+                <input ng-model="phn" type="text" id="phn" placeholder="Phone Number">
+            </div>
             <label for="start-date">Date</label>
             <br>
             <input type="datetime-local" id="startdate" onload="getDate();" onchange="validateDate(this)"
