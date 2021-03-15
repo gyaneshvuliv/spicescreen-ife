@@ -126,7 +126,7 @@ exports.varify_otp = function (req, res) {
 
 exports.get_base_stations = function (req, res) {
   let query = "Select station from "
-    + " ife_base_stations "
+    + " ife_base_stations order by station asc  "
     db.get().query(query, function (err, doc) {
     if (err) { return handleError(res, err); }
     else {
